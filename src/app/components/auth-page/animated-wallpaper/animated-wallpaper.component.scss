@@ -1,2 +1,8 @@
 .background {
+  background-color: var(--backColor);
+  min-height: 100vh;
+  min-width: 100vw;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
 }

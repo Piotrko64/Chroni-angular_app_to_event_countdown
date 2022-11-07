@@ -1,0 +1,44 @@
+.classAnimation {
+  height: 200px;
+  animation: animation 15s infinite ease;
+  position: absolute;
+  left: 20%;
+  top: 10%;
+
+  filter: blur(4px);
+}
+
+@media (max-width: 1200px) {
+  .classAnimation {
+    height: 160px;
+  }
+}
+@media (max-width: 780px) {
+  .classAnimation {
+    height: 140px;
+  }
+}
+@media (max-width: 570px) {
+  .classAnimation {
+    height: 100px;
+  }
+}
+@media (max-width: 440px) {
+  .classAnimation {
+    height: 60px;
+  }
+}
+@keyframes animation {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  50% {
+    transform: translate(120px, 120px);
+  }
+  65% {
+    transform: translate(100px, 80px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
