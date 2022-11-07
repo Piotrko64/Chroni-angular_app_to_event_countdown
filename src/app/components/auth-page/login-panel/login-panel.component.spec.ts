@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AnimatedWallpaperComponent } from './animated-wallpaper.component';
+import { LoginPanelComponent } from './login-panel.component';
 
-describe('AnimatedWallpaperComponent', () => {
-  let component: AnimatedWallpaperComponent;
-  let fixture: ComponentFixture<AnimatedWallpaperComponent>;
+describe('LoginPanelComponent', () => {
+  let component: LoginPanelComponent;
+  let fixture: ComponentFixture<LoginPanelComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AnimatedWallpaperComponent ]
+      declarations: [ LoginPanelComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AnimatedWallpaperComponent);
+    fixture = TestBed.createComponent(LoginPanelComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

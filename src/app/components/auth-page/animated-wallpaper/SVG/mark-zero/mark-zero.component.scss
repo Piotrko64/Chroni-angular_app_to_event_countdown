@@ -1,9 +1,9 @@
 .classAnimation {
   height: 200px;
-  animation: animation 18s infinite linear;
+  animation: animation 15s infinite linear;
   position: absolute;
   left: 5%;
-  top: 10%;
+  bottom: 10%;
 
   filter: blur(4px);
 }
