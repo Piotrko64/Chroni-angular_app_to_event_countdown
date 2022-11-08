@@ -1,9 +1,14 @@
 :root {
   --backColor: #122e38;
   --fontColor: #d61515;
-  --helpDarkColor: #3c1518;
+  --helpDarkColor: #102830;
 }
 * {
   margin: 0;
   padding: 0;
+  font-family: "Lato", sans-serif;
+  box-sizing: border-box;
+}
+html {
+  font-size: 24px;
 }

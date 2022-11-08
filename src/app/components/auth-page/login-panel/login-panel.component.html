@@ -1,1 +1,17 @@
-<p>login-panel works!</p>
+<form>
+  <div class="title" class="title">{{ title | uppercase }}</div>
+  <label for="login">Login</label>
+  <input id="login" name="login" />
+  <label for="password">Password</label>
+  <input id="password" name="password" type="password" />
+  <div class="containerButtons">
+    <button type="submit" class="login">Log in</button>
+    <div class="orDiv">
+      <div class="or">OR</div>
+      <div class="hr"></div>
+    </div>
+
+    <button class="register">Sign up</button>
+  </div>
+  <div class="about">What is <span> CHRONI</span> ?</div>
+</form>
