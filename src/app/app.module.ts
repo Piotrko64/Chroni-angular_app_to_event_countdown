@@ -11,7 +11,7 @@ import { ShapeSvgComponent } from './components/auth-page/animated-wallpaper/SVG
 import { LoginPanelComponent } from './components/auth-page/login-panel/login-panel.component';
 import { CookiePanelComponent } from './components/auth-page/cookie-panel/cookie-panel.component';
 import { OrdinaryButtonComponent } from './ui/buttons/ordinary-button/ordinary-button.component';
-import { CookiesMessageService } from './components/auth-page/cookie-panel/cookies-message.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -26,7 +26,7 @@ import { CookiesMessageService } from './components/auth-page/cookie-panel/cooki
     CookiePanelComponent,
     OrdinaryButtonComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
