@@ -5,13 +5,22 @@
   <label for="password">Password</label>
   <input id="password" name="password" type="password" />
   <div class="containerButtons">
-    <button type="submit" class="login">Log in</button>
+    <app-ordinary-button
+      text="Log in"
+      [maxWidth]="true"
+      addClass="login"
+    ></app-ordinary-button>
     <div class="orDiv">
       <div class="or">OR</div>
       <div class="hr"></div>
     </div>
 
-    <button class="register">Sign up</button>
+    <app-ordinary-button
+      text="Sign up"
+      [maxWidth]="true"
+      type="submit"
+      addClass="register"
+    ></app-ordinary-button>
   </div>
   <div class="about">What is <span> CHRONI</span> ?</div>
 </form>

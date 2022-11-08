@@ -1,0 +1,25 @@
+.login,
+.ok {
+  background-color: var(--fontColor);
+  color: white;
+}
+.register {
+  background-color: white;
+  color: black;
+}
+
+button {
+  cursor: pointer;
+  min-width: 120px;
+  padding: 10px 8px;
+  text-transform: uppercase;
+  font-family: "Lato";
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  transition: all 0.1s ease-in-out;
+}
+.maxWidth {
+  width: 100%;
+}

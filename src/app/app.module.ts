@@ -9,6 +9,9 @@ import { ClockSvgComponent } from './components/auth-page/animated-wallpaper/SVG
 import { MarkZeroComponent } from './components/auth-page/animated-wallpaper/SVG/mark-zero/mark-zero.component';
 import { ShapeSvgComponent } from './components/auth-page/animated-wallpaper/SVG/shape-svg/shape-svg.component';
 import { LoginPanelComponent } from './components/auth-page/login-panel/login-panel.component';
+import { CookiePanelComponent } from './components/auth-page/cookie-panel/cookie-panel.component';
+import { OrdinaryButtonComponent } from './ui/buttons/ordinary-button/ordinary-button.component';
+import { CookiesMessageService } from './components/auth-page/cookie-panel/cookies-message.service';
 
 @NgModule({
   declarations: [
@@ -20,6 +23,8 @@ import { LoginPanelComponent } from './components/auth-page/login-panel/login-pa
     MarkZeroComponent,
     ShapeSvgComponent,
     LoginPanelComponent,
+    CookiePanelComponent,
+    OrdinaryButtonComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
