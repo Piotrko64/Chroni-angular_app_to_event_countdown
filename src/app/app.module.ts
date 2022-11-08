@@ -12,6 +12,7 @@ import { LoginPanelComponent } from './components/auth-page/login-panel/login-pa
 import { CookiePanelComponent } from './components/auth-page/cookie-panel/cookie-panel.component';
 import { OrdinaryButtonComponent } from './ui/buttons/ordinary-button/ordinary-button.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CookiePanelComponent,
     OrdinaryButtonComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

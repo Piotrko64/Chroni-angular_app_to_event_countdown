@@ -10,7 +10,6 @@ export class CookiePanelComponent {
   constructor(private cookie: CookiesMessageService) {}
 
   setCookie() {
-    console.log('see');
     this.cookie.setCookie();
   }
 }

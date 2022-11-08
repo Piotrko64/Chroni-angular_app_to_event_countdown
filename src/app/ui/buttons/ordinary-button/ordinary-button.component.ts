@@ -12,5 +12,6 @@ export class OrdinaryButtonComponent {
   @Input() maxWidth: boolean = false;
   @Input() type: ButtonTypes = 'button';
   @Input() addClass: string = '';
+  @Input() isDisabled: boolean = false;
   @Input() callbackFunction: () => void = () => {};
 }

@@ -9,13 +9,12 @@ import { trigger, transition, style, animate } from '@angular/animations';
   providers: [CookiesMessageService],
   animations: [
     trigger('inOutAnimation', [
-      transition(':enter', [
-        style({ height: 0, opacity: 0 }),
-        animate('1s ease-out', style({ height: 300, opacity: 1 })),
-      ]),
       transition(':leave', [
-        style({ height: 300, opacity: 1 }),
-        animate('1s ease-in', style({ height: 0, opacity: 0 })),
+        style({ position: 'fixed', bottom: 0, left: 0, opacity: 1 }),
+        animate(
+          '0.5s ease-in',
+          style({ transform: 'translateY(100px)', opacity: 0 })
+        ),
       ]),
     ]),
   ],

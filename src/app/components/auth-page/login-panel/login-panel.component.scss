@@ -8,7 +8,14 @@ form {
   align-items: center;
   flex-direction: column;
   z-index: 4;
+  position: relative;
   box-shadow: 0px 0px 24px 0px var(--helpDarkColor);
+  .check {
+    color: white;
+    text-align: center;
+    margin-bottom: 30px;
+    text-decoration: underline red;
+  }
   .title {
     font-size: 1.9rem;
     color: white;
@@ -16,7 +23,18 @@ form {
     color: var(--fontColor);
     margin-bottom: 20px;
   }
+  .invalidInput {
+    color: var(--fontColor);
+    font-weight: 700;
+    letter-spacing: 2px;
+  }
+  .invalidInput::after {
+    opacity: 0;
+    content: "!!!";
+    animation: opacity 0.3s linear forwards;
+  }
   label {
+    transition: all 0.3s ease-in-out;
     width: 100%;
     font-size: 0.95rem;
     color: white;
@@ -95,6 +113,14 @@ form {
       position: absolute;
       border-radius: 15px;
     }
+  }
+}
+@keyframes opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 @media (max-width: 570px) {

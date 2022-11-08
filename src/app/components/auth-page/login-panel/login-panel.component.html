@@ -1,14 +1,40 @@
-<form>
+<form [formGroup]="mainForm" (ngSubmit)="onLogin()">
   <div class="title" class="title">{{ title | uppercase }}</div>
-  <label for="login">Login</label>
-  <input id="login" name="login" />
-  <label for="password">Password</label>
-  <input id="password" name="password" type="password" />
+  <label
+    for="login"
+    [ngClass]="{
+      invalidInput:
+        !mainForm.controls['login'].valid && mainForm.controls['login'].touched
+    }"
+    >Login</label
+  >
+  <input id="login" name="login" formControlName="login" />
+  <label
+    for="password"
+    [ngClass]="{
+      invalidInput:
+        !mainForm.controls['password'].valid &&
+        mainForm.controls['password'].touched
+    }"
+    >Password</label
+  >
+
+  <input
+    id="password"
+    name="password"
+    type="password"
+    formControlName="password"
+  />
   <div class="containerButtons">
+    <div *ngIf="invalidMessage" class="check">
+      {{ "Check every inputs!!!" | uppercase }}
+    </div>
+
     <app-ordinary-button
       text="Log in"
       [maxWidth]="true"
       addClass="login"
+      type="submit"
     ></app-ordinary-button>
     <div class="orDiv">
       <div class="or">OR</div>
@@ -18,7 +44,6 @@
     <app-ordinary-button
       text="Sign up"
       [maxWidth]="true"
-      type="submit"
       addClass="register"
     ></app-ordinary-button>
   </div>
