@@ -1,11 +1,13 @@
 import { ModalManageService } from './ui/modal-alert/modal-manage.service';
 import { Component, OnInit } from '@angular/core';
 import { Modal } from 'src/@types/modal';
+import { modalsAnimation } from './data/animations/modalsAnimation';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
+  animations: modalsAnimation,
 })
 export class AppComponent implements OnInit {
   constructor(private modal: ModalManageService) {}

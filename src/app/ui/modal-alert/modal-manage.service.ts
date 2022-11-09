@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { Modal } from 'src/@types/modal';
 
 @Injectable({
   providedIn: 'root',
@@ -13,10 +14,10 @@ export class ModalManageService {
     open: false,
   });
 
-  openModal(title: string, description: string) {
-    this.modalInfo.next({ title, description, open: true });
+  openModal(dataModal: Omit<Modal, 'open'>) {
+    this.modalInfo.next({ ...dataModal, open: true });
   }
   closeModal() {
-    this.modalInfo.next({ ...this.modalInfo.value, open: true });
+    this.modalInfo.next({ ...this.modalInfo.value, open: false });
   }
 }
