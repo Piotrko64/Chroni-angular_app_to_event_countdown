@@ -1,12 +1,14 @@
-<div class="blur"></div>
-<div class="modalContainer">
-  <h2>{{ dataModal.title }}</h2>
-  <p>
-    {{ dataModal.description }}
-  </p>
-  <app-ordinary-button
-    addClass="ok"
-    text="OK"
-    [callbackFunction]="closeModal"
-  ></app-ordinary-button>
+<div>
+  <div class="blur"></div>
+  <div class="modalContainer">
+    <h2>{{ dataModal.title }}</h2>
+    <p>
+      {{ dataModal.description }}
+    </p>
+    <app-ordinary-button
+      addClass="ok"
+      text="OK"
+      [callbackFunction]="closeModal"
+    ></app-ordinary-button>
+  </div>
 </div>

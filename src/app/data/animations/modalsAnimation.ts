@@ -11,8 +11,12 @@ export const modalsAnimation = [
       animate('.2s linear', style({ opacity: 0 })),
     ]),
     transition(':enter', [
-      style({ opacity: 0, 'z-index': 99, position: 'relative', top: '0px' }),
-      animate('.2s linear', style({ opacity: 1, top: '500px' })),
+      style({
+        opacity: 0,
+        'z-index': 99,
+        position: 'relative',
+      }),
+      animate('.2s linear', style({ opacity: 1 })),
     ]),
   ]),
 ];
