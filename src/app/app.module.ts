@@ -13,6 +13,7 @@ import { CookiePanelComponent } from './components/auth-page/cookie-panel/cookie
 import { OrdinaryButtonComponent } from './ui/buttons/ordinary-button/ordinary-button.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ModalAlertComponent } from './ui/modal-alert/modal-alert.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     LoginPanelComponent,
     CookiePanelComponent,
     OrdinaryButtonComponent,
+    ModalAlertComponent,
   ],
   imports: [
     BrowserModule,
