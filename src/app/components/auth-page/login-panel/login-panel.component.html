@@ -9,6 +9,14 @@
     >Login</label
   >
   <input id="login" name="login" formControlName="login" />
+  <div
+    class="validAlert"
+    *ngIf="
+      !mainForm.controls['login'].valid && mainForm.controls['login'].touched
+    "
+  >
+    Login must be at least 4 characters
+  </div>
   <label
     for="password"
     [ngClass]="{
@@ -25,6 +33,15 @@
     type="password"
     formControlName="password"
   />
+  <div
+    class="validAlert"
+    *ngIf="
+      !mainForm.controls['password'].valid &&
+      mainForm.controls['password'].touched
+    "
+  >
+    Password must be at least 4 characters
+  </div>
   <div class="containerButtons">
     <div *ngIf="invalidMessage" class="check">
       {{ "Check every inputs!!!" | uppercase }}
