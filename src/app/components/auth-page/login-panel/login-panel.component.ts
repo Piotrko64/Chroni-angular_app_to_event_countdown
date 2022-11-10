@@ -1,6 +1,6 @@
 import { aboutChroni } from './../../../data/modals/aboutChroni';
 import { ModalManageService } from './../../../ui/modal-alert/modal-manage.service';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { UserDataService } from 'src/app/services/user-data/user-data.service';
 
@@ -9,7 +9,7 @@ import { UserDataService } from 'src/app/services/user-data/user-data.service';
   templateUrl: './login-panel.component.html',
   styleUrls: ['./login-panel.component.scss'],
 })
-export class LoginPanelComponent {
+export class LoginPanelComponent implements OnInit {
   constructor(
     private Modal: ModalManageService,
     private userData: UserDataService
@@ -18,6 +18,7 @@ export class LoginPanelComponent {
   title = 'Chroni';
   arrayValidators = [Validators.required, Validators.minLength(4)];
   invalidMessage = false;
+  isLoadingStatus = false;
 
   mainForm = new FormGroup({
     login: new FormControl('', this.arrayValidators),
@@ -41,12 +42,20 @@ export class LoginPanelComponent {
     if (!this.displayInvalidMessage()) {
       return;
     }
+
+    this.userData.loginUser(this.mainForm.value);
   }
+
   onRegister = () => {
     if (!this.displayInvalidMessage()) {
       return;
     }
-    console.log(this.mainForm.value);
+
     this.userData.registerUser(this.mainForm.value);
   };
+  ngOnInit() {
+    this.userData.isLoading.subscribe((boolean) => {
+      this.isLoadingStatus = boolean;
+    });
+  }
 }

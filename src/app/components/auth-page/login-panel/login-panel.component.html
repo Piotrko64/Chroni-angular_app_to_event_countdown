@@ -42,7 +42,7 @@
   >
     Password must be at least 4 characters
   </div>
-  <div class="containerButtons">
+  <div class="containerButtons" *ngIf="!isLoadingStatus; else loader">
     <div *ngIf="invalidMessage" class="check">
       {{ "Check every inputs!!!" | uppercase }}
     </div>
@@ -65,6 +65,9 @@
       [callbackFunction]="onRegister"
     ></app-ordinary-button>
   </div>
+  <ng-template #loader>
+    <app-auth-loader></app-auth-loader>
+  </ng-template>
   <div class="about" (click)="displayModal()">
     What is <span> CHRONI</span> ?
   </div>

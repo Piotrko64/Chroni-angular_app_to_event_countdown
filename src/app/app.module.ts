@@ -15,6 +15,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ModalAlertComponent } from './ui/modal-alert/modal-alert.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AuthLoaderComponent } from './ui/auth-loader/auth-loader.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { HttpClientModule } from '@angular/common/http';
     CookiePanelComponent,
     OrdinaryButtonComponent,
     ModalAlertComponent,
+    AuthLoaderComponent,
   ],
   imports: [
     BrowserModule,
