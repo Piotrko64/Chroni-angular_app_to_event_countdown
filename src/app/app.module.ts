@@ -14,6 +14,7 @@ import { OrdinaryButtonComponent } from './ui/buttons/ordinary-button/ordinary-b
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ModalAlertComponent } from './ui/modal-alert/modal-alert.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { ModalAlertComponent } from './ui/modal-alert/modal-alert.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
