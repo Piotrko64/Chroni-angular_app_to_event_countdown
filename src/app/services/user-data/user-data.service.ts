@@ -36,11 +36,14 @@ export class UserDataService {
   loginUser(dataUser: dataAuth) {
     this.isLoading.next(true);
     this.http
-      .post(`${environment.backendUrl}/api/login`, dataUser)
+      .post(`${environment.backendUrl}/api/login`, dataUser, {
+        withCredentials: true,
+      })
       .pipe(tap(() => this.isLoading.next(false)))
       .subscribe({
         next: (data) => console.log(data),
         error: (error) => {
+          this.isLoading.next(false);
           this.modal.openModal({
             title: 'Bad news!',
             description: error.error.err,
