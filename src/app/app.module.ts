@@ -16,6 +16,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ModalAlertComponent } from './ui/modal-alert/modal-alert.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthLoaderComponent } from './ui/auth-loader/auth-loader.component';
+import { DigitalNumberComponent } from './ui/digital-number/digital-number.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { AuthLoaderComponent } from './ui/auth-loader/auth-loader.component';
     OrdinaryButtonComponent,
     ModalAlertComponent,
     AuthLoaderComponent,
+    DigitalNumberComponent,
   ],
   imports: [
     BrowserModule,
