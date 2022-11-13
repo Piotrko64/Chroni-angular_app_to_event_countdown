@@ -5,7 +5,7 @@ import { AuthPageComponent } from './pages/auth-page/auth-page.component';
 
 const routes: Routes = [
   { path: '', component: AuthPageComponent },
-  { path: '/home', component: DigitalNumberComponent },
+  { path: 'home', component: DigitalNumberComponent },
 ];
 
 @NgModule({

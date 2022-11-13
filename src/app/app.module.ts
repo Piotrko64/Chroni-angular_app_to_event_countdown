@@ -17,6 +17,8 @@ import { ModalAlertComponent } from './ui/modal-alert/modal-alert.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthLoaderComponent } from './ui/auth-loader/auth-loader.component';
 import { DigitalNumberComponent } from './ui/digital-number/digital-number.component';
+import { MainPageComponent } from './pages/main-page/main-page.component';
+import { SingleSetDataInfoComponent } from './components/main-page/single-set-data-info/single-set-data-info.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,8 @@ import { DigitalNumberComponent } from './ui/digital-number/digital-number.compo
     ModalAlertComponent,
     AuthLoaderComponent,
     DigitalNumberComponent,
+    MainPageComponent,
+    SingleSetDataInfoComponent,
   ],
   imports: [
     BrowserModule,
