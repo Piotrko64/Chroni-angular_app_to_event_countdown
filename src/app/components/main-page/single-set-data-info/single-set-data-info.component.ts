@@ -1,15 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { dataToDigitalClock } from './../../../data/digitalClock/dataToDigitalClock';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-single-set-data-info',
   templateUrl: './single-set-data-info.component.html',
-  styleUrls: ['./single-set-data-info.component.scss']
+  styleUrls: ['./single-set-data-info.component.scss'],
 })
-export class SingleSetDataInfoComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+export class SingleSetDataInfoComponent {
+  @Input() numbersOfDate = 2;
+  @Input() nameTypeDate = 'seconds';
 }
