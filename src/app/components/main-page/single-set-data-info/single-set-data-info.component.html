@@ -1,4 +1,7 @@
 <div>{{ numbersOfDate }}</div>
-<app-digital-number></app-digital-number>
-<app-digital-number></app-digital-number>
-<div>{{ nameTypeDate }}</div>
+<app-digital-number
+  [activeNumbers]="objectToDisplayClock.firstNumber"
+></app-digital-number>
+<app-digital-number
+  [activeNumbers]="objectToDisplayClock.secondNumber"
+></app-digital-number>

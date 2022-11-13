@@ -1,5 +1,6 @@
 import { dataToDigitalClock } from './../../../data/digitalClock/dataToDigitalClock';
 import { Component, Input, OnInit } from '@angular/core';
+import { getObjectToDisplayClock } from './helpers/getObjectToDisplayClock';
 
 @Component({
   selector: 'app-single-set-data-info',
@@ -9,4 +10,9 @@ import { Component, Input, OnInit } from '@angular/core';
 export class SingleSetDataInfoComponent {
   @Input() numbersOfDate = 2;
   @Input() nameTypeDate = 'seconds';
+  objectToDisplayClock = getObjectToDisplayClock(this.numbersOfDate);
+
+  ngOnChanges() {
+    this.objectToDisplayClock = getObjectToDisplayClock(this.numbersOfDate);
+  }
 }
