@@ -19,6 +19,7 @@ import { AuthLoaderComponent } from './ui/auth-loader/auth-loader.component';
 import { DigitalNumberComponent } from './ui/digital-number/digital-number.component';
 import { MainPageComponent } from './pages/main-page/main-page.component';
 import { SingleSetDataInfoComponent } from './components/main-page/single-set-data-info/single-set-data-info.component';
+import { WholeSetInfoComponent } from './components/main-page/whole-set-info/whole-set-info.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { SingleSetDataInfoComponent } from './components/main-page/single-set-da
     DigitalNumberComponent,
     MainPageComponent,
     SingleSetDataInfoComponent,
+    WholeSetInfoComponent,
   ],
   imports: [
     BrowserModule,

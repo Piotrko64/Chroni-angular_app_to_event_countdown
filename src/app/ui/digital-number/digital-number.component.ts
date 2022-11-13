@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-digital-number',
   templateUrl: './digital-number.component.html',
   styleUrls: ['./digital-number.component.scss'],
 })
-export class DigitalNumberComponent implements OnInit {
+export class DigitalNumberComponent {
   activeNumbers = [5, 6];
 
   isActiveNumber(numberId: number) {
@@ -13,6 +13,4 @@ export class DigitalNumberComponent implements OnInit {
       (numberDigital) => numberDigital === numberId
     );
   }
-
-  ngOnInit(): void {}
 }
