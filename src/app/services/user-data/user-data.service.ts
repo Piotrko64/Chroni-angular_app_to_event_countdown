@@ -2,8 +2,9 @@ import { ModalManageService } from './../../ui/modal-alert/modal-manage.service'
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, tap } from 'rxjs';
-import { dataAuth } from 'src/@types/dataAuth';
+
 import { environment } from 'src/environments/environment';
+import { DataAuth } from 'src/@types/DataAuth';
 
 @Injectable({
   providedIn: 'root',
@@ -12,7 +13,7 @@ export class UserDataService {
   constructor(private http: HttpClient, private modal: ModalManageService) {}
   isLoading = new BehaviorSubject(false);
 
-  registerUser(dataUser: dataAuth) {
+  registerUser(dataUser: DataAuth) {
     this.isLoading.next(true);
     this.http
       .post(`${environment.backendUrl}/api/createUser`, dataUser)
@@ -33,7 +34,7 @@ export class UserDataService {
         },
       });
   }
-  loginUser(dataUser: dataAuth) {
+  loginUser(dataUser: DataAuth) {
     this.isLoading.next(true);
     this.http
       .post(`${environment.backendUrl}/api/login`, dataUser, {

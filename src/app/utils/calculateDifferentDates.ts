@@ -1,7 +1,7 @@
-export function calculateDifferentDates(dateToSubstract: Date) {
+export function calculateDifferentDates(dateToSubstract: string) {
   const actualDate = new Date();
 
-  const substractionDate = +dateToSubstract - +actualDate;
+  const substractionDate = +new Date(dateToSubstract) - +actualDate;
 
   const seconds = Math.floor(substractionDate / 1000) % 60;
   const minutes = Math.floor(substractionDate / (1000 * 60)) % 60;

@@ -1,3 +1,6 @@
-.activeNumber {
-  fill: green;
+svg > path {
+  fill: var(--helpDarkColor);
+}
+svg > path.activeNumber {
+  fill: white;
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-digital-number',
@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./digital-number.component.scss'],
 })
 export class DigitalNumberComponent {
-  activeNumbers = [5, 6];
+  @Input() activeNumbers = [1, 2, 3, 4, 5, 6, 7];
 
   isActiveNumber(numberId: number) {
     return !!this.activeNumbers.find(

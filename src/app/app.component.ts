@@ -1,6 +1,6 @@
 import { ModalManageService } from './ui/modal-alert/modal-manage.service';
 import { Component, OnInit } from '@angular/core';
-import { Modal } from 'src/@types/modal';
+import { Modal } from 'src/@types/Modal';
 import { modalsAnimation } from './data/animations/modalsAnimation';
 
 @Component({

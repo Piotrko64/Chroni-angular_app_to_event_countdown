@@ -1,4 +1,4 @@
-export interface dataAuth {
+export interface DataAuth {
   login: string;
   password: string;
 }

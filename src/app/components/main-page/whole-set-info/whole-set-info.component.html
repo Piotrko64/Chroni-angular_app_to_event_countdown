@@ -1,1 +1,5 @@
-<p>whole-set-info works!</p>
+<app-single-set-data-info
+  *ngFor="let type of typesOfNumbers"
+  [numbersOfDate]="objectCountdown[type]"
+  [nameTypeDate]="type"
+></app-single-set-data-info>
