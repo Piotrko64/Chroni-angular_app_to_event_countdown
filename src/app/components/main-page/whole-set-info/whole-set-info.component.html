@@ -1,5 +1,7 @@
-<app-single-set-data-info
-  *ngFor="let type of typesOfNumbers"
-  [numbersOfDate]="objectCountdown[type]"
-  [nameTypeDate]="type"
-></app-single-set-data-info>
+<div class="containerAllSets">
+  <app-single-set-data-info
+    *ngFor="let type of typesOfNumbers"
+    [numbersOfDate]="objectCountdown[type]"
+    [nameTypeDate]="type"
+  ></app-single-set-data-info>
+</div>

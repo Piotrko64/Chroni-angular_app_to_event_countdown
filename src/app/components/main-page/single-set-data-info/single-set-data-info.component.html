@@ -1,7 +1,11 @@
-<div>{{ numbersOfDate }}</div>
-<app-digital-number
-  [activeNumbers]="objectToDisplayClock.firstNumber"
-></app-digital-number>
-<app-digital-number
-  [activeNumbers]="objectToDisplayClock.secondNumber"
-></app-digital-number>
+<div class="mainContainer">
+  <div class="containerNumbers">
+    <app-digital-number
+      [activeNumbers]="objectToDisplayClock.firstNumber"
+    ></app-digital-number>
+    <app-digital-number
+      [activeNumbers]="objectToDisplayClock.secondNumber"
+    ></app-digital-number>
+  </div>
+  <div class="titleType">{{ nameTypeDate | uppercase }}</div>
+</div>

@@ -20,6 +20,7 @@ import { DigitalNumberComponent } from './ui/digital-number/digital-number.compo
 import { MainPageComponent } from './pages/main-page/main-page.component';
 import { SingleSetDataInfoComponent } from './components/main-page/single-set-data-info/single-set-data-info.component';
 import { WholeSetInfoComponent } from './components/main-page/whole-set-info/whole-set-info.component';
+import { DigitalPlusComponent } from './ui/digital-plus/digital-plus.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { WholeSetInfoComponent } from './components/main-page/whole-set-info/who
     MainPageComponent,
     SingleSetDataInfoComponent,
     WholeSetInfoComponent,
+    DigitalPlusComponent,
   ],
   imports: [
     BrowserModule,

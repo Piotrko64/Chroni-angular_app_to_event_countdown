@@ -11,13 +11,15 @@ import { typesNumbers } from 'src/app/data/digitalClock/typesNumbers';
 })
 export class WholeSetInfoComponent implements OnInit {
   @Input() eventDate = '';
+  @Input() title = '';
+  @Input() description = '';
 
   typesOfNumbers = typesNumbers;
   objectCountdown: ObjectCountdown = {
-    days: 10,
-    minutes: 10,
-    seconds: 10,
-    hours: 10,
+    days: 0,
+    minutes: 0,
+    seconds: 0,
+    hours: 0,
   };
 
   ngOnInit(): void {

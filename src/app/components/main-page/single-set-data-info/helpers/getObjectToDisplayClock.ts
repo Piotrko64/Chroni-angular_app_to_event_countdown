@@ -20,10 +20,8 @@ function getArrayIdClockElements(number: number) {
   });
 }
 function getArrayNumbersBySingleNumber(num: number, stringNumber: string) {
-  const arrayFromString = stringNumber.split('');
-
   return getArrayIdClockElements(
-    +arrayFromString[arrayFromString.length - num]!
+    +stringNumber.charAt(stringNumber.length - num)
   )?.digitalParts;
 }
 
