@@ -9,7 +9,7 @@ export class DigitalNumberComponent {
   @Input() activeNumbers = [1, 2, 3, 4, 5, 6, 7];
 
   isActiveNumber(numberId: number) {
-    return !!this.activeNumbers.find(
+    return !!this.activeNumbers?.find(
       (numberDigital) => numberDigital === numberId
     );
   }

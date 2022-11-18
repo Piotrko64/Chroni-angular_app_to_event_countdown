@@ -1,11 +1,12 @@
 <div class="containerEvent">
   <h1 *ngIf="title">{{ title }}</h1>
-  <div class="containerAllSets">
+  <div class="containerAllSets" *ngIf="!objectCountdown.end">
     <app-single-set-data-info
       *ngFor="let type of typesOfNumbers"
       [numbersOfDate]="objectCountdown[type]"
       [nameTypeDate]="type"
     ></app-single-set-data-info>
   </div>
+  <div *ngIf="objectCountdown.end" class="end">THE END</div>
   <p>{{ description }}</p>
 </div>
