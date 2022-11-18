@@ -1,5 +1,6 @@
 <div class="mainContainer">
   <div class="containerNumbers">
+    <app-digital-plus *ngIf="objectToDisplayClock.more"></app-digital-plus>
     <app-digital-number
       [activeNumbers]="objectToDisplayClock.firstNumber"
     ></app-digital-number>

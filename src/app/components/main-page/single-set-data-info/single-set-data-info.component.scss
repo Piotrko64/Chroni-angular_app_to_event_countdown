@@ -1,7 +1,12 @@
 .mainContainer {
 }
+.containerNumbers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .titleType {
   text-align: center;
-  font-size: 1.25rem;
-  font-weight: 400;
+  font-size: 1.15rem;
+  font-weight: 300;
 }

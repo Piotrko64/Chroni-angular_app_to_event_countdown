@@ -21,6 +21,8 @@ import { MainPageComponent } from './pages/main-page/main-page.component';
 import { SingleSetDataInfoComponent } from './components/main-page/single-set-data-info/single-set-data-info.component';
 import { WholeSetInfoComponent } from './components/main-page/whole-set-info/whole-set-info.component';
 import { DigitalPlusComponent } from './ui/digital-plus/digital-plus.component';
+import { ListEventsComponent } from './components/main-page/list-events/list-events.component';
+import { AutoLoginPageComponent } from './pages/auto-login-page/auto-login-page.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +43,8 @@ import { DigitalPlusComponent } from './ui/digital-plus/digital-plus.component';
     SingleSetDataInfoComponent,
     WholeSetInfoComponent,
     DigitalPlusComponent,
+    ListEventsComponent,
+    AutoLoginPageComponent,
   ],
   imports: [
     BrowserModule,

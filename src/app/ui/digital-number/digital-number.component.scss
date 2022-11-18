@@ -1,11 +1,12 @@
 svg {
-  width: 95px;
+  width: 85px;
   height: auto;
   margin: 5px;
 }
 
 svg > path {
   fill: var(--helpDarkColor);
+  transition: all 0.15s ease-in-out;
 }
 svg > path.activeNumber {
   fill: white;
