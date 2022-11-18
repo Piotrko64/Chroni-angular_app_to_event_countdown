@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-auto-login-page',
   templateUrl: './auto-login-page.component.html',
-  styleUrls: ['./auto-login-page.component.scss']
+  styleUrls: ['./auto-login-page.component.scss'],
 })
-export class AutoLoginPageComponent implements OnInit {
+export class AutoLoginPageComponent {
+  constructor(private router: Router) {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  backToLoginPage = () => {
+    this.router.navigate(['']);
+  };
 }
