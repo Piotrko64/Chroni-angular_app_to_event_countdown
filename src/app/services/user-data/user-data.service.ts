@@ -5,7 +5,7 @@ import { BehaviorSubject, tap } from 'rxjs';
 
 import { environment } from 'src/environments/environment';
 import { DataAuth } from 'src/@types/DataAuth';
-import { clearCookies } from 'src/app/utils/clearCookies';
+import { clearCookies } from 'src/app/utils/cookies/clearCookies';
 
 @Injectable({
   providedIn: 'root',

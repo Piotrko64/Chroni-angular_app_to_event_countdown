@@ -1,4 +1,4 @@
-import { clearCookies } from 'src/app/utils/clearCookies';
+import { clearCookies } from './clearCookies';
 
 describe('tests clearing cookies', () => {
   beforeEach(() => {
