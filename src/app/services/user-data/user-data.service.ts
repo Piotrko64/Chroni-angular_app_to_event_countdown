@@ -1,8 +1,8 @@
-import { DataEvents } from './../../../@types/DataEvents';
+import { AllEvents, DataEvents } from './../../../@types/DataEvents';
 import { ModalManageService } from './../../ui/modal-alert/modal-manage.service';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, tap } from 'rxjs';
+import { BehaviorSubject, Subject, tap } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { DataAuth } from 'src/@types/DataAuth';
 import { Router } from '@angular/router';
@@ -17,14 +17,7 @@ export class UserDataService {
     private router: Router
   ) {}
   isLoading = new BehaviorSubject(false);
-  eventsUser = new BehaviorSubject([
-    {
-      userId: 1,
-      eventId: '444',
-      title: '444',
-      description: '444',
-    },
-  ]);
+  eventsUser = new BehaviorSubject<AllEvents>([]);
 
   registerUser(dataUser: DataAuth) {
     this.isLoading.next(true);
@@ -75,6 +68,7 @@ export class UserDataService {
       .pipe(tap(() => this.isLoading.next(false)))
       .subscribe({
         next: (data) => {
+          console.log('autoLogin', data);
           this.eventsUser.next(data.dataUser.allEvents);
           this.router.navigate(['home'], { replaceUrl: true });
         },

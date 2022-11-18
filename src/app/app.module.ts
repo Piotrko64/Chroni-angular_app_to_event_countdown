@@ -23,6 +23,7 @@ import { WholeSetInfoComponent } from './components/main-page/whole-set-info/who
 import { DigitalPlusComponent } from './ui/digital-plus/digital-plus.component';
 import { ListEventsComponent } from './components/main-page/list-events/list-events.component';
 import { AutoLoginPageComponent } from './pages/auto-login-page/auto-login-page.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { AutoLoginPageComponent } from './pages/auto-login-page/auto-login-page.
     DigitalPlusComponent,
     ListEventsComponent,
     AutoLoginPageComponent,
+    NavigationComponent,
   ],
   imports: [
     BrowserModule,
