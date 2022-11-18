@@ -1,18 +1,30 @@
+import { DataEvents } from './../../../@types/DataEvents';
 import { ModalManageService } from './../../ui/modal-alert/modal-manage.service';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, tap } from 'rxjs';
-
 import { environment } from 'src/environments/environment';
 import { DataAuth } from 'src/@types/DataAuth';
-import { clearCookies } from 'src/app/utils/cookies/clearCookies';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserDataService {
-  constructor(private http: HttpClient, private modal: ModalManageService) {}
+  constructor(
+    private http: HttpClient,
+    private modal: ModalManageService,
+    private router: Router
+  ) {}
   isLoading = new BehaviorSubject(false);
+  eventsUser = new BehaviorSubject([
+    {
+      userId: 1,
+      eventId: '444',
+      title: '444',
+      description: '444',
+    },
+  ]);
 
   registerUser(dataUser: DataAuth) {
     this.isLoading.next(true);
@@ -54,17 +66,21 @@ export class UserDataService {
       });
   }
   autoLogin() {
+    this.router.navigate(['autoLogin'], { replaceUrl: true });
     this.isLoading.next(true);
     this.http
-      .post(`${environment.backendUrl}/api/autoLogin`, {
+      .get<DataEvents>(`${environment.backendUrl}/api/autoLogin`, {
         withCredentials: true,
       })
       .pipe(tap(() => this.isLoading.next(false)))
       .subscribe({
-        next: (data) => console.log(data),
+        next: (data) => {
+          this.eventsUser.next(data.dataUser.allEvents);
+          this.router.navigate(['home'], { replaceUrl: true });
+        },
         error: (error) => {
-          clearCookies();
           this.isLoading.next(false);
+          this.router.navigate(['home'], { replaceUrl: true });
           this.modal.openModal({
             title: 'Bad news!',
             description: error.error.err || 'Something went wrong...',

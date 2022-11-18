@@ -1,4 +1,4 @@
-const SEARCHING_WORD = 'SessionId';
+const SEARCHING_WORD = 'sessionId';
 
 export function findSessionIdCookie(): false | string {
   const arrayCookies = document.cookie.split(';').map((cookie) => ({

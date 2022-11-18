@@ -2,6 +2,8 @@ import { ModalManageService } from './ui/modal-alert/modal-manage.service';
 import { Component, OnInit } from '@angular/core';
 import { Modal } from 'src/@types/Modal';
 import { modalsAnimation } from './data/animations/modalsAnimation';
+import { findSessionIdCookie } from './utils/cookies/findSessionIdCookie';
+import { UserDataService } from './services/user-data/user-data.service';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +12,10 @@ import { modalsAnimation } from './data/animations/modalsAnimation';
   animations: modalsAnimation,
 })
 export class AppComponent implements OnInit {
-  constructor(private modal: ModalManageService) {}
+  constructor(
+    private modal: ModalManageService,
+    private loginUser: UserDataService
+  ) {}
 
   modalInfo: Modal = { open: true, title: '', description: '' };
 
@@ -18,5 +23,8 @@ export class AppComponent implements OnInit {
     this.modal.modalInfo.subscribe((info: Modal) => {
       this.modalInfo = info;
     });
+    if (findSessionIdCookie()) {
+      this.loginUser.autoLogin();
+    }
   }
 }

@@ -4,7 +4,7 @@ describe('Tests finding of cookies', () => {
   it('Finds value of sessionId that exist', () => {
     Object.defineProperty(window.document, 'cookie', {
       writable: true,
-      value: 'SessionId=1234;Other=something',
+      value: 'sessionId=1234;Other=something',
     });
 
     const valueCookieFromFunction = findSessionIdCookie();
