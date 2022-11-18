@@ -10,6 +10,6 @@ export class AutoLoginPageComponent {
   constructor(private router: Router) {}
 
   backToLoginPage = () => {
-    this.router.navigate(['']);
+    this.router.navigate([''], { replaceUrl: true });
   };
 }

@@ -1,6 +1,14 @@
 <div class="sectionList">
-  <div class="headerList">Look more events</div>
-  <div class="listContainer">
+  <div class="headerList" (click)="toggleOpenList()">
+    Look more events
+
+    <img
+      src="./assets/arrowVector.svg"
+      alt=""
+      [ngClass]="{ active: openList }"
+    />
+  </div>
+  <div class="listContainer" [ngClass]="{ active: openList }">
     <app-single-set-data-info></app-single-set-data-info>
     <app-single-set-data-info></app-single-set-data-info>
     <app-single-set-data-info></app-single-set-data-info>

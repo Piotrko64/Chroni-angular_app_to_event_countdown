@@ -1,9 +1,11 @@
-{{ title }}
-<div class="containerAllSets">
-  <app-single-set-data-info
-    *ngFor="let type of typesOfNumbers"
-    [numbersOfDate]="objectCountdown[type]"
-    [nameTypeDate]="type"
-  ></app-single-set-data-info>
+<div class="containerEvent">
+  <h1>{{ title }}</h1>
+  <div class="containerAllSets">
+    <app-single-set-data-info
+      *ngFor="let type of typesOfNumbers"
+      [numbersOfDate]="objectCountdown[type]"
+      [nameTypeDate]="type"
+    ></app-single-set-data-info>
+  </div>
+  <p>{{ description }}</p>
 </div>
-{{ description }}
