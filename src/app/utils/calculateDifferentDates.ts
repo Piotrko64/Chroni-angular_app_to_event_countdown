@@ -1,4 +1,12 @@
-export function calculateDifferentDates(dateToSubstract: string) {
+interface ObjectDate {
+  end: boolean;
+  days: number;
+  hours: number;
+  minutes: number;
+  seconds: number;
+}
+
+export function calculateDifferentDates(dateToSubstract: string): ObjectDate {
   const actualDate = new Date();
 
   const substractionDate = +new Date(dateToSubstract) - +actualDate;
@@ -9,6 +17,7 @@ export function calculateDifferentDates(dateToSubstract: string) {
   const days = Math.floor(substractionDate / (24 * 60 * 60 * 1000));
 
   return {
+    end: substractionDate <= 0,
     days,
     hours,
     minutes,
