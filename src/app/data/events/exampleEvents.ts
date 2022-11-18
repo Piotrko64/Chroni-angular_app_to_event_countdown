@@ -1,4 +1,4 @@
-const exampleEvents = [
+export const exampleEvents = [
   {
     title: 'Event 1',
     description:

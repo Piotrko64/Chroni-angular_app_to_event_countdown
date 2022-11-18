@@ -9,9 +9,6 @@
     />
   </div>
   <div class="listContainer" [ngClass]="{ active: openList }">
-    <app-single-set-data-info></app-single-set-data-info>
-    <app-single-set-data-info></app-single-set-data-info>
-    <app-single-set-data-info></app-single-set-data-info>
-    <app-single-set-data-info></app-single-set-data-info>
+    <app-whole-set-info *ngFor="let set of listEvents"></app-whole-set-info>
   </div>
 </div>

@@ -5,6 +5,7 @@ import { BehaviorSubject, tap } from 'rxjs';
 
 import { environment } from 'src/environments/environment';
 import { DataAuth } from 'src/@types/DataAuth';
+import { clearCookies } from 'src/app/utils/clearCookies';
 
 @Injectable({
   providedIn: 'root',
@@ -62,6 +63,7 @@ export class UserDataService {
       .subscribe({
         next: (data) => console.log(data),
         error: (error) => {
+          clearCookies();
           this.isLoading.next(false);
           this.modal.openModal({
             title: 'Bad news!',
