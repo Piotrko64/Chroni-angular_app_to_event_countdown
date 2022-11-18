@@ -17,6 +17,7 @@ export class WholeSetInfoComponent implements OnInit {
 
   typesOfNumbers = typesNumbers;
   objectCountdown: ObjectCountdown = {
+    end: false,
     days: 0,
     minutes: 0,
     seconds: 0,
