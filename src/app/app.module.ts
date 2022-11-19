@@ -27,8 +27,8 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { ButtonsPanelComponent } from './components/main-page/buttons-panel/buttons-panel.component';
 import { SingleButtonComponent } from './components/main-page/buttons-panel/single-button/single-button.component';
 import { ModifyCreateEventComponent } from './pages/modify-create-event/modify-create-event.component';
-import { MatNativeDateModule } from '@angular/material/core';
 
+import { RouterModule } from '@angular/router';
 @NgModule({
   declarations: [
     AppComponent,

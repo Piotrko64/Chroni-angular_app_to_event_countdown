@@ -1,7 +1,7 @@
 import { findSessionIdCookie } from './findSessionIdCookie';
 
-describe('Tests finding of cookies', () => {
-  it('Finds value of sessionId that exist', () => {
+describe('tests finding of cookies', () => {
+  it('finds value of sessionId that exist', () => {
     Object.defineProperty(window.document, 'cookie', {
       writable: true,
       value: 'sessionId=1234;Other=something',
@@ -14,7 +14,7 @@ describe('Tests finding of cookies', () => {
     expect(valueCookieFromFunction).toEqual(expectValueCookie);
   });
 
-  it('Not finds any value - return false', () => {
+  it('not finds any value - return false', () => {
     Object.defineProperty(window.document, 'cookie', {
       writable: true,
       value: '',
