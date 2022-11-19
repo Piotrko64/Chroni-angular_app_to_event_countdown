@@ -26,6 +26,8 @@ import { AutoLoginPageComponent } from './pages/auto-login-page/auto-login-page.
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { ButtonsPanelComponent } from './components/main-page/buttons-panel/buttons-panel.component';
 import { SingleButtonComponent } from './components/main-page/buttons-panel/single-button/single-button.component';
+import { ModifyCreateEventComponent } from './pages/modify-create-event/modify-create-event.component';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -51,6 +53,7 @@ import { SingleButtonComponent } from './components/main-page/buttons-panel/sing
     NavigationComponent,
     ButtonsPanelComponent,
     SingleButtonComponent,
+    ModifyCreateEventComponent,
   ],
   imports: [
     BrowserModule,

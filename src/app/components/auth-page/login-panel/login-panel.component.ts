@@ -1,6 +1,6 @@
 import { aboutChroni } from './../../../data/modals/aboutChroni';
 import { ModalManageService } from './../../../ui/modal-alert/modal-manage.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { UserDataService } from 'src/app/services/user-data/user-data.service';
 
@@ -8,6 +8,7 @@ import { UserDataService } from 'src/app/services/user-data/user-data.service';
   selector: 'app-login-panel',
   templateUrl: './login-panel.component.html',
   styleUrls: ['./login-panel.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class LoginPanelComponent implements OnInit {
   constructor(

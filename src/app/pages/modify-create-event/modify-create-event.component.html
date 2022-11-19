@@ -1,0 +1,60 @@
+<app-navigation></app-navigation>
+<div class="formContainer">
+  <form [formGroup]="eventForm" (ngSubmit)="onSubmit()">
+    <h1>{{ titleForm }}</h1>
+    <label
+      for="titleEvent"
+      [ngClass]="{
+        invalidInput:
+          !eventForm.controls['titleEvent'].valid &&
+          eventForm.controls['titleEvent'].touched
+      }"
+      >Title event</label
+    >
+    <input id="titleEvent" name="titleEvent" formControlName="titleEvent" />
+    <div
+      class="validAlert"
+      *ngIf="
+        !eventForm.controls['titleEvent'].valid &&
+        eventForm.controls['titleEvent'].touched
+      "
+    >
+      Title event need from 5 to 55 characters
+    </div>
+    <label
+      for="dateTime"
+      [ngClass]="{
+        invalidInput:
+          !eventForm.controls['timeEvent'].valid &&
+          eventForm.controls['timeEvent'].touched
+      }"
+      >Select date and time
+    </label>
+    <input
+      type="datetime-local"
+      id="dateTime"
+      formControlName="timeEvent"
+      name="dateTime"
+    />
+    <label for="description">Description of Event </label>
+    <textarea
+      id="description"
+      formControlName="description"
+      maxlength="300"
+    ></textarea>
+    <div
+      class="validAlert"
+      *ngIf="
+        !eventForm.controls['description'].valid &&
+        eventForm.controls['description'].touched
+      "
+    >
+      Max 300 characters
+    </div>
+    <app-ordinary-button
+      text="Add"
+      addClass="login"
+      type="submit"
+    ></app-ordinary-button>
+  </form>
+</div>
