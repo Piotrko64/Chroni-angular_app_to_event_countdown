@@ -6,6 +6,7 @@ import { BehaviorSubject, Subject, tap } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { DataAuth } from 'src/@types/DataAuth';
 import { Router } from '@angular/router';
+import { clearCookies } from 'src/app/utils/cookies/clearCookies';
 
 @Injectable({
   providedIn: 'root',
@@ -43,12 +44,15 @@ export class UserDataService {
   loginUser(dataUser: DataAuth) {
     this.isLoading.next(true);
     this.http
-      .post(`${environment.backendUrl}/api/login`, dataUser, {
+      .post<DataEvents>(`${environment.backendUrl}/api/login`, dataUser, {
         withCredentials: true,
       })
       .pipe(tap(() => this.isLoading.next(false)))
       .subscribe({
-        next: (data) => console.log(data),
+        next: (data) => {
+          this.router.navigate(['home'], { replaceUrl: true });
+          this.eventsUser.next(data.dataUser.allEvents);
+        },
         error: (error) => {
           this.isLoading.next(false);
           this.modal.openModal({
@@ -56,6 +60,21 @@ export class UserDataService {
             description: error.error.err,
           });
         },
+      });
+  }
+  logOut() {
+    this.router.navigate([''], { replaceUrl: true });
+    this.modal.openModal({
+      title: 'Bye!',
+      description: 'You are log out!',
+    });
+    this.http
+      .delete(`${environment.backendUrl}/api/logout`, {
+        withCredentials: true,
+      })
+      .subscribe({
+        next: clearCookies,
+        error: clearCookies,
       });
   }
   autoLogin() {

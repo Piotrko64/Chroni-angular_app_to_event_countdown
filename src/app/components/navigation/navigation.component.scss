@@ -1,0 +1,16 @@
+nav {
+  position: fixed;
+  background-color: var(--helpDarkColor);
+  top: 0;
+  left: 0;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 15px;
+  border-bottom: 2px solid white;
+}
+.logo {
+  font-family: "Oswald";
+  font-size: 1.4rem;
+  color: var(--fontColor);
+}
