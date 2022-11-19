@@ -24,6 +24,8 @@ import { DigitalPlusComponent } from './ui/digital-plus/digital-plus.component';
 import { ListEventsComponent } from './components/main-page/list-events/list-events.component';
 import { AutoLoginPageComponent } from './pages/auto-login-page/auto-login-page.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
+import { ButtonsPanelComponent } from './components/main-page/buttons-panel/buttons-panel.component';
+import { SingleButtonComponent } from './components/main-page/buttons-panel/single-button/single-button.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +49,8 @@ import { NavigationComponent } from './components/navigation/navigation.componen
     ListEventsComponent,
     AutoLoginPageComponent,
     NavigationComponent,
+    ButtonsPanelComponent,
+    SingleButtonComponent,
   ],
   imports: [
     BrowserModule,
