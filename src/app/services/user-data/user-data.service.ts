@@ -19,6 +19,7 @@ export class UserDataService {
   ) {}
   isLoading = new BehaviorSubject(false);
   eventsUser = new BehaviorSubject<AllEvents>([]);
+  isAuth = new BehaviorSubject(false);
 
   registerUser(dataUser: DataAuth) {
     this.isLoading.next(true);
@@ -51,6 +52,7 @@ export class UserDataService {
       .subscribe({
         next: (data) => {
           this.router.navigate(['home'], { replaceUrl: true });
+          this.isAuth.next(true);
           this.eventsUser.next(data.dataUser.allEvents);
         },
         error: (error) => {
@@ -68,6 +70,7 @@ export class UserDataService {
       title: 'Bye!',
       description: 'You are log out!',
     });
+    this.isAuth.next(false);
     this.http
       .delete(`${environment.backendUrl}/api/logout`, {
         withCredentials: true,
@@ -87,7 +90,7 @@ export class UserDataService {
       .pipe(tap(() => this.isLoading.next(false)))
       .subscribe({
         next: (data) => {
-          console.log('autoLogin', data);
+          this.isAuth.next(true);
           this.eventsUser.next(data.dataUser.allEvents);
           this.router.navigate(['home'], { replaceUrl: true });
         },
