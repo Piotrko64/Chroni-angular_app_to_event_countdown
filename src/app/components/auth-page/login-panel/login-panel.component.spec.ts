@@ -1,4 +1,7 @@
+import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { UserDataService } from 'src/app/services/user-data/user-data.service';
 
 import { LoginPanelComponent } from './login-panel.component';
 
@@ -8,9 +11,9 @@ describe('LoginPanelComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LoginPanelComponent ]
-    })
-    .compileComponents();
+      declarations: [LoginPanelComponent],
+      imports: [HttpClientModule, RouterTestingModule],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -21,5 +24,9 @@ describe('LoginPanelComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+  it('should return false from service userData property - isLoading', () => {
+    let userDataService = fixture.debugElement.injector.get(UserDataService);
+    expect(userDataService.isLoading).toBeFalse();
   });
 });

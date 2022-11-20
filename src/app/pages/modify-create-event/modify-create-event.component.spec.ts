@@ -9,7 +9,7 @@ describe('ModifyCreateEventComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ModifyCreateEventComponent],
-      imports: [RouterTestingModule],
+      imports: [RouterTestingModule, RouterTestingModule],
     }).compileComponents();
   });
 
@@ -22,6 +22,7 @@ describe('ModifyCreateEventComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
   it('should find text - "Add new event"', () => {
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('h1')?.textContent).toContain(
