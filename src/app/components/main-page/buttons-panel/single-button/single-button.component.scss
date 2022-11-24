@@ -1,0 +1,29 @@
+button {
+  background-color: var(--fontColor);
+  border: 2px solid white;
+  border-radius: 8px;
+  position: relative;
+  font-family: "Lato";
+  font-size: 0.65rem;
+  cursor: pointer;
+  img {
+    width: 50px;
+  }
+  &::after {
+    content: attr(textTooltip);
+    position: absolute;
+    top: -30px;
+    background-color: var(--helpDarkColor);
+    color: white;
+    padding: 3px 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 1px solid white;
+    border-radius: 6px;
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+  }
+  &:hover::after {
+    opacity: 1;
+  }
+}

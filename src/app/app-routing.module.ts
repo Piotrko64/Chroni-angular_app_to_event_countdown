@@ -17,7 +17,7 @@ const routes: Routes = [
   {
     path: 'eventManage',
     component: ModifyCreateEventComponent,
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
   },
 ];
 

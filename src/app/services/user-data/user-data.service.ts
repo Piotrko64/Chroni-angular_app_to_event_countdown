@@ -81,7 +81,8 @@ export class UserDataService {
       });
   }
   autoLogin() {
-    this.router.navigate(['autoLogin'], { replaceUrl: true });
+    this.router.navigate(['autoLogin']);
+    const targetUrl = this.router.url;
     this.isLoading.next(true);
     this.http
       .get<DataEvents>(`${environment.backendUrl}/api/autoLogin`, {
@@ -92,11 +93,14 @@ export class UserDataService {
         next: (data) => {
           this.isAuth.next(true);
           this.eventsUser.next(data.dataUser.allEvents);
-          this.router.navigate(['home'], { replaceUrl: true });
+          console.log(targetUrl);
+          this.router.navigate(['/home'], {
+            replaceUrl: true,
+          });
         },
         error: (error) => {
           this.isLoading.next(false);
-          this.router.navigate(['home'], { replaceUrl: true });
+          this.router.navigate(['/'], { replaceUrl: true });
           this.modal.openModal({
             title: 'Bad news!',
             description: error.error.err || 'Something went wrong...',
