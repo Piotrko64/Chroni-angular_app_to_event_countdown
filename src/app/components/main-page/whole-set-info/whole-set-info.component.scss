@@ -3,6 +3,9 @@
   width: 100%;
   justify-content: center;
   gap: 90px;
+  &.versionList {
+    gap: 20px;
+  }
 }
 .end {
   text-align: center;

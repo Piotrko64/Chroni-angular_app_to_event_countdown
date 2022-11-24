@@ -8,6 +8,13 @@ svg > path {
   fill: var(--helpDarkColor);
   transition: all 0.15s ease-in-out;
 }
+svg.versionList > path {
+  fill: black;
+  stroke: rgb(63, 63, 63);
+}
 svg > path.activeNumber {
   fill: white;
+}
+.versionList {
+  width: 55px;
 }

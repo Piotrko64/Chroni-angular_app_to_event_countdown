@@ -1,15 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-digital-plus',
   templateUrl: './digital-plus.component.html',
-  styleUrls: ['./digital-plus.component.scss']
+  styleUrls: ['./digital-plus.component.scss'],
 })
 export class DigitalPlusComponent implements OnInit {
+  @Input() versionList = false;
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

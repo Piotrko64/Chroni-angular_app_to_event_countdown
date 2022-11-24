@@ -14,7 +14,7 @@ export class WholeSetInfoComponent implements OnInit {
   @Input() eventDate = '';
   @Input() title = '';
   @Input() description = '';
-
+  @Input() versionList = false;
   typesOfNumbers = typesNumbers;
   objectCountdown: ObjectCountdown = {
     end: false,

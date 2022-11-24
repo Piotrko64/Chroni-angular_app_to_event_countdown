@@ -9,9 +9,14 @@
     />
   </div>
   <div class="listContainer" [ngClass]="{ active: openList }">
-    <app-whole-set-info
-      *ngFor="let set of listEvents"
-      [eventDate]="set.dataEvent"
-    ></app-whole-set-info>
+    <div *ngFor="let set of listEvents" class="singleEvent">
+      <app-whole-set-info
+        [eventDate]="set.dataEvent"
+        [versionList]="true"
+      ></app-whole-set-info>
+      <div class="info">
+        <h2>{{ set.title | sliceText }}</h2>
+      </div>
+    </div>
   </div>
 </div>

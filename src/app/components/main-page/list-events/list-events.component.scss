@@ -31,6 +31,13 @@
     &.active {
       max-height: calc(100vh - 50px);
     }
+    .singleEvent {
+      display: flex;
+      justify-content: center;
+      .info {
+        margin: 0 10px;
+      }
+    }
   }
 }
 

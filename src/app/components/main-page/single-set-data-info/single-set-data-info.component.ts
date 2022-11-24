@@ -10,6 +10,8 @@ import { getObjectToDisplayClock } from './helpers/getObjectToDisplayClock';
 export class SingleSetDataInfoComponent {
   @Input() numbersOfDate = 2;
   @Input() nameTypeDate = 'seconds';
+  @Input() versionList = false;
+
   objectToDisplayClock = getObjectToDisplayClock(this.numbersOfDate);
 
   ngOnChanges() {

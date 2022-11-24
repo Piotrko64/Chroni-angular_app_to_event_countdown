@@ -29,6 +29,7 @@ import { SingleButtonComponent } from './components/main-page/buttons-panel/sing
 import { ModifyCreateEventComponent } from './pages/modify-create-event/modify-create-event.component';
 
 import { RouterModule } from '@angular/router';
+import { SliceTextPipe } from './pipes/slice-text.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,6 +55,7 @@ import { RouterModule } from '@angular/router';
     ButtonsPanelComponent,
     SingleButtonComponent,
     ModifyCreateEventComponent,
+    SliceTextPipe,
   ],
   imports: [
     BrowserModule,

@@ -8,7 +8,11 @@ import { AuthGuard } from './services/user-data/auth.guard';
 
 const routes: Routes = [
   { path: '', component: AuthPageComponent },
-  { path: 'home', component: MainPageComponent, canActivate: [AuthGuard] },
+  {
+    path: 'home',
+    component: MainPageComponent,
+    canActivate: [AuthGuard],
+  },
   { path: 'autoLogin', component: AutoLoginPageComponent },
   {
     path: 'eventManage',
