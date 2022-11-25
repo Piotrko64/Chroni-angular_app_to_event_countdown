@@ -1,21 +1,11 @@
 <app-navigation></app-navigation>
-<main>
+<main *ngIf="choosenEvent">
   <app-whole-set-info
-    eventDate="2022-11-18T15:28:44.922Z"
-    title="Test Title"
-    description="This method returns the character from the given string at the specified index.
-
-Please note that the first character index of the string is 0 and last index is string.length - 1
-
-Input Parameters :
-
-Index
-The character index to be searched. The value should be as integer
-
-Return Values :
-
-Returns the character if it is found at the specified index otherwise returns empty."
+    [eventDate]="choosenEvent.dataEvent"
+    [title]="choosenEvent.title"
+    [description]="choosenEvent.description"
   ></app-whole-set-info>
   <app-buttons-panel></app-buttons-panel>
   <app-list-events></app-list-events>
 </main>
+<h1>Lack of Events</h1>

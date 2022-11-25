@@ -1,11 +1,13 @@
-export type AllEvents = Array<{
+export type AllEvents = Array<EventUser>;
+
+export interface EventUser {
   userId: number;
   eventId: string;
   title: string;
   description: string;
   dataEvent: string;
   sessionId: string;
-}>;
+}
 
 export interface EventById {
   message: string;

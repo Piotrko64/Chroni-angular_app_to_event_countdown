@@ -7,3 +7,13 @@ main {
   align-items: center;
   flex-direction: column;
 }
+h1 {
+  height: 90vh;
+  width: 100vw;
+  color: var(--fontColor);
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Oswald";
+}
