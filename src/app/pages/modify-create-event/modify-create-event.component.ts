@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Route } from '@angular/router';
-import { map } from 'rxjs';
 import { UserDataService } from 'src/app/services/user-data/user-data.service';
 
 @Component({
@@ -39,10 +38,18 @@ export class ModifyCreateEventComponent {
     });
 
     if (this.eventId) {
-      console.log(this.dataUser.eventsUser.value);
+      const findEvent = this.dataUser.eventsUser.value.find(
+        (event) => event.eventId === this.eventId
+      );
+      console.log(findEvent);
     }
   }
   onSubmit() {
-    console.log(this.eventForm.value);
+    const { titleEvent, timeEvent, description } = this.eventForm.value;
+    this.dataUser.addEvent({
+      title: titleEvent,
+      dataEvent: new Date(timeEvent).toISOString(),
+      description,
+    });
   }
 }
