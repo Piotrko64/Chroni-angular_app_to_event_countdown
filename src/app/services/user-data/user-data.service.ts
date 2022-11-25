@@ -1,12 +1,13 @@
-import { AllEvents, DataEvents } from './../../../@types/DataEvents';
+import { AllEvents, DataEvents, EventById } from './../../../@types/DataEvents';
 import { ModalManageService } from './../../ui/modal-alert/modal-manage.service';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Subject, tap } from 'rxjs';
+import { BehaviorSubject, tap } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { DataAuth } from 'src/@types/DataAuth';
 import { Router } from '@angular/router';
 import { clearCookies } from 'src/app/utils/cookies/clearCookies';
+import { sortingEventsByDates } from 'src/app/utils/sortingEventsByDates';
 
 @Injectable({
   providedIn: 'root',
@@ -20,6 +21,7 @@ export class UserDataService {
   isLoading = new BehaviorSubject(false);
   eventsUser = new BehaviorSubject<AllEvents>([]);
   isAuth = new BehaviorSubject(false);
+  choosenEvent = new BehaviorSubject<string>('');
 
   registerUser(dataUser: DataAuth) {
     this.isLoading.next(true);
@@ -53,7 +55,7 @@ export class UserDataService {
         next: (data) => {
           this.router.navigate(['home'], { replaceUrl: true });
           this.isAuth.next(true);
-          this.eventsUser.next(data.dataUser.allEvents);
+          this.eventsUser.next(sortingEventsByDates(data.dataUser.allEvents));
         },
         error: (error) => {
           this.isLoading.next(false);
@@ -80,9 +82,39 @@ export class UserDataService {
         error: clearCookies,
       });
   }
+
+  addById(eventId: string) {
+    this.http
+      .post<EventById>(
+        `${environment.backendUrl}/api/addEventById`,
+        {
+          eventId,
+        },
+        {
+          withCredentials: true,
+        }
+      )
+      .subscribe({
+        next: (data: EventById) => {
+          this.eventsUser.next(this.eventsUser.getValue().concat([data.data]));
+          this.modal.openModal({
+            title: data.message,
+            description: '🥳🥳🥳',
+          });
+        },
+        error: (err) => {
+          console.log(err);
+          this.modal.openModal({
+            title: 'Something went wrong...',
+            description: err.error.err,
+          });
+        },
+      });
+  }
+
   autoLogin() {
     this.router.navigate(['autoLogin']);
-    const targetUrl = this.router.url;
+
     this.isLoading.next(true);
     this.http
       .get<DataEvents>(`${environment.backendUrl}/api/autoLogin`, {
@@ -92,8 +124,8 @@ export class UserDataService {
       .subscribe({
         next: (data) => {
           this.isAuth.next(true);
-          this.eventsUser.next(data.dataUser.allEvents);
-          console.log(targetUrl);
+          this.eventsUser.next(sortingEventsByDates(data.dataUser.allEvents));
+
           this.router.navigate(['/home'], {
             replaceUrl: true,
           });

@@ -1,10 +1,29 @@
 <div class="buttonsContainer">
+  <div *ngIf="activeInputAddById">
+    <input [(ngModel)]="id" type="text" />
+    <button (click)="addEventById()">Add</button>
+    <button>Close</button>
+  </div>
   <app-single-button
     namePng="Add"
     textTooltip="Add new event"
+    [callbackFunction]="addEvent"
   ></app-single-button>
   <app-single-button
     namePng="Update"
     textTooltip="Edit this event"
+  ></app-single-button>
+  <app-single-button
+    namePng="AddID"
+    textTooltip="Add exist event from other user by ID event"
+    [callbackFunction]="toggleInputToAddById"
+  ></app-single-button>
+  <app-single-button
+    namePng="Trash"
+    textTooltip="Delete this event"
+  ></app-single-button>
+  <app-single-button
+    namePng="FullScreen"
+    textTooltip="Turn on screensaver mode"
   ></app-single-button>
 </div>

@@ -1,14 +1,19 @@
 button {
-  background-color: var(--fontColor);
+  // background-color: var(--fontColor);
   border: 2px solid white;
+  background-color: transparent;
   border-radius: 8px;
   position: relative;
   font-family: "Lato";
   font-size: 0.65rem;
   cursor: pointer;
   margin: 7px;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   img {
-    width: 50px;
+    width: 37px;
   }
   &::after {
     content: attr(textTooltip);

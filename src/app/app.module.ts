@@ -27,8 +27,7 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { ButtonsPanelComponent } from './components/main-page/buttons-panel/buttons-panel.component';
 import { SingleButtonComponent } from './components/main-page/buttons-panel/single-button/single-button.component';
 import { ModifyCreateEventComponent } from './pages/modify-create-event/modify-create-event.component';
-
-import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 import { SliceTextPipe } from './pipes/slice-text.pipe';
 @NgModule({
   declarations: [
@@ -63,6 +62,7 @@ import { SliceTextPipe } from './pipes/slice-text.pipe';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

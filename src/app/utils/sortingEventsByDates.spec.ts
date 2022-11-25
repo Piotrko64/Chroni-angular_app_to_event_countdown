@@ -30,8 +30,8 @@ const dummyList = [
 const sortingList = sortingEventsByDates(dummyList);
 
 describe('check sorting events', () => {
-  it('first event should have eventId equal 1', () => {
-    expect(+sortingList[0].eventId).toEqual(1);
+  it('first event should have eventId equal 2', () => {
+    expect(+sortingList[0].eventId).toEqual(2);
   });
 
   it('second event should have userId equal 3', () => {
