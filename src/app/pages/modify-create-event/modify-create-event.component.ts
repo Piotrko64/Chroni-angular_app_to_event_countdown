@@ -41,7 +41,15 @@ export class ModifyCreateEventComponent {
       const findEvent = this.dataUser.eventsUser.value.find(
         (event) => event.eventId === this.eventId
       );
-      console.log(findEvent);
+      if (!findEvent) {
+        return;
+      }
+
+      this.eventForm.patchValue({
+        titleEvent: findEvent?.title,
+        timeEvent: new Date(findEvent?.dataEvent).toISOString().slice(0, -5),
+        description: findEvent?.description,
+      });
     }
   }
   onSubmit() {

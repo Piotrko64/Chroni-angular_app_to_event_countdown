@@ -8,4 +8,4 @@
   <app-buttons-panel></app-buttons-panel>
   <app-list-events></app-list-events>
 </main>
-<h1>Lack of Events</h1>
+<h1 *ngIf="!eventList.length">Lack of Events</h1>

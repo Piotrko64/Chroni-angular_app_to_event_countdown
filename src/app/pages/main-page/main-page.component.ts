@@ -1,3 +1,4 @@
+import { AllEvents } from './../../../@types/DataEvents';
 import { Component, OnInit } from '@angular/core';
 import { EventUser } from 'src/@types/DataEvents';
 import { UserDataService } from 'src/app/services/user-data/user-data.service';
@@ -10,9 +11,11 @@ import { UserDataService } from 'src/app/services/user-data/user-data.service';
 export class MainPageComponent implements OnInit {
   constructor(private userData: UserDataService) {}
   choosenEvent: EventUser | undefined;
+  eventList: AllEvents = [];
 
   ngOnInit(): void {
-    this.userData.eventsUser.subscribe((data) => {
+    this.userData.eventsUser.subscribe((data: AllEvents) => {
+      this.eventList = data;
       if (!this.userData.choosenEvent.value) {
         this.choosenEvent = data[0];
       }

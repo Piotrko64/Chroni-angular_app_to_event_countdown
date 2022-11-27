@@ -9,6 +9,12 @@ export interface EventUser {
   sessionId: string;
 }
 
+export interface AddingEvent {
+  title: string;
+  description: string;
+  dataEvent: string;
+}
+
 export interface EventById {
   message: string;
   data: {

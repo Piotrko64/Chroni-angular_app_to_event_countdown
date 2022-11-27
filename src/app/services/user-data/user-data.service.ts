@@ -1,4 +1,10 @@
-import { AllEvents, DataEvents, EventById } from './../../../@types/DataEvents';
+import {
+  AddingEvent,
+  AllEvents,
+  DataEvents,
+  EventById,
+  EventUser,
+} from './../../../@types/DataEvents';
 import { ModalManageService } from './../../ui/modal-alert/modal-manage.service';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -80,6 +86,36 @@ export class UserDataService {
       .subscribe({
         next: clearCookies,
         error: clearCookies,
+      });
+  }
+
+  addEvent(body: AddingEvent) {
+    this.http
+      .post<{ addNewEvent: EventUser }>(
+        `${environment.backendUrl}/api/addEvent`,
+
+        body,
+        {
+          withCredentials: true,
+        }
+      )
+      .subscribe({
+        next: (data) => {
+          this.eventsUser.next(
+            this.eventsUser.getValue().concat([data.addNewEvent])
+          );
+          this.modal.openModal({
+            title: 'We add new event!!!',
+            description: '🥳🥳🥳',
+          });
+        },
+        error: (err) => {
+          console.log(err);
+          this.modal.openModal({
+            title: 'Something went wrong...',
+            description: err.error.err,
+          });
+        },
       });
   }
 

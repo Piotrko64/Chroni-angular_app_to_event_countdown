@@ -1,6 +1,7 @@
 import { Router } from '@angular/router';
 import { Component } from '@angular/core';
 import { UserDataService } from 'src/app/services/user-data/user-data.service';
+import { sortingEventsByDates } from 'src/app/utils/sortingEventsByDates';
 
 @Component({
   selector: 'app-buttons-panel',
@@ -16,10 +17,21 @@ export class ButtonsPanelComponent {
   addEvent = () => {
     this.router.navigate(['eventManage']);
   };
+
   toggleInputToAddById = () => {
     this.activeInputAddById = !this.activeInputAddById;
   };
+
   addEventById() {
     this.userData.addById(this.id);
   }
+  editThisEvent = () => {
+    this.router.navigate(['eventManage'], {
+      queryParams: {
+        eventId:
+          this.userData.choosenEvent.value ||
+          sortingEventsByDates(this.userData.eventsUser.value)[0].eventId,
+      },
+    });
+  };
 }
