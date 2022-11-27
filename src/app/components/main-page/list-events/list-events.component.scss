@@ -4,6 +4,8 @@
   left: 0;
   width: 100vw;
   .headerList {
+    z-index: 999;
+    position: relative;
     height: 50px;
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;

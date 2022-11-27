@@ -1,5 +1,5 @@
 import { Router } from '@angular/router';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { UserDataService } from 'src/app/services/user-data/user-data.service';
 import { sortingEventsByDates } from 'src/app/utils/sortingEventsByDates';
 
@@ -13,6 +13,7 @@ export class ButtonsPanelComponent {
   activeInputAddById = false;
 
   constructor(private router: Router, private userData: UserDataService) {}
+  @Input() screenSaverFn!: () => void;
 
   addEvent = () => {
     this.router.navigate(['eventManage']);
@@ -34,4 +35,10 @@ export class ButtonsPanelComponent {
       },
     });
   };
+
+  turnOnScreenSaver = () => {
+    this.screenSaverFn();
+  };
+
+  deleteEvent = () => {};
 }

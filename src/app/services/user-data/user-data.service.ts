@@ -72,6 +72,9 @@ export class UserDataService {
         },
       });
   }
+
+  deleteEvent() {}
+
   logOut() {
     this.router.navigate([''], { replaceUrl: true });
     this.modal.openModal({

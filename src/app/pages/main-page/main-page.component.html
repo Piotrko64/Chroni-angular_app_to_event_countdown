@@ -1,11 +1,15 @@
 <app-navigation></app-navigation>
 <main *ngIf="choosenEvent">
-  <app-whole-set-info
-    [eventDate]="choosenEvent.dataEvent"
-    [title]="choosenEvent.title"
-    [description]="choosenEvent.description"
-  ></app-whole-set-info>
-  <app-buttons-panel></app-buttons-panel>
+  <div #mainInfo class="center">
+    <app-whole-set-info
+      [eventDate]="choosenEvent.dataEvent"
+      [title]="choosenEvent.title"
+      [description]="choosenEvent.description"
+    ></app-whole-set-info>
+  </div>
+  <app-buttons-panel
+    [screenSaverFn]="turnOnScreenSaverMode"
+  ></app-buttons-panel>
   <app-list-events></app-list-events>
 </main>
 <h1 *ngIf="!eventList.length">Lack of Events</h1>
