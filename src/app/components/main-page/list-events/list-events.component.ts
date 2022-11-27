@@ -1,6 +1,8 @@
+import { ListActiveService } from './../../../pages/main-page/list-active.service';
 import { Component, OnInit } from '@angular/core';
 import { AllEvents } from 'src/@types/DataEvents';
 import { UserDataService } from 'src/app/services/user-data/user-data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-events',
@@ -8,18 +10,39 @@ import { UserDataService } from 'src/app/services/user-data/user-data.service';
   styleUrls: ['./list-events.component.scss'],
 })
 export class ListEventsComponent implements OnInit {
-  constructor(private userData: UserDataService) {}
+  constructor(
+    private userData: UserDataService,
+    private listManage: ListActiveService,
+    private router: Router
+  ) {}
 
   listEvents: AllEvents = [];
   openList = false;
 
   toggleOpenList() {
-    this.openList = !this.openList;
+    this.listManage.toggleActiveList();
   }
+
+  updateThisEvent(id: string) {
+    this.router.navigate(['/eventManage'], {
+      queryParams: {
+        eventId: id,
+      },
+    });
+  }
+
+  changeMainEvent(id: string) {
+    this.userData.changeChoosenEvent(id);
+    this.toggleOpenList();
+  }
+
   ngOnInit() {
     this.userData.eventsUser.subscribe((data) => {
-      console.log(data, 'aaa');
       this.listEvents = data;
+    });
+
+    this.listManage.isActiveList.subscribe((active) => {
+      this.openList = active;
     });
   }
 }

@@ -29,5 +29,14 @@ export class MainPageComponent implements OnInit {
         this.choosenEvent = data[0];
       }
     });
+    this.userData.choosenEvent.subscribe((id: string) => {
+      if (!id) {
+        this.choosenEvent = this.userData.eventsUser.value[0];
+      } else {
+        this.choosenEvent = this.userData.eventsUser.value.find(
+          (event) => event.eventId === id
+        );
+      }
+    });
   }
 }

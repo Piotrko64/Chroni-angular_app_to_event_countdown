@@ -29,6 +29,11 @@ export class UserDataService {
   isAuth = new BehaviorSubject(false);
   choosenEvent = new BehaviorSubject<string>('');
 
+  changeChoosenEvent(id: string) {
+    console.log(id);
+    this.choosenEvent.next(id);
+  }
+
   registerUser(dataUser: DataAuth) {
     this.isLoading.next(true);
     this.http
