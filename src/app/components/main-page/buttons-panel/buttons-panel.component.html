@@ -14,19 +14,30 @@
     textTooltip="Edit this event"
     [callbackFunction]="editThisEvent"
   ></app-single-button>
-  <app-single-button
-    namePng="AddID"
-    textTooltip="Add exist event from other user by ID event"
-    [callbackFunction]="toggleInputToAddById"
-  ></app-single-button>
+
   <app-single-button
     namePng="Trash"
     textTooltip="Delete this event"
     [callbackFunction]="deleteMainEvent"
   ></app-single-button>
-  <app-single-button
-    namePng="FullScreen"
-    textTooltip="Turn on screensaver mode"
-    [callbackFunction]="turnOnScreenSaver"
-  ></app-single-button>
+
+  <div class="marginLeft">
+    <app-single-button
+      namePng="AddID"
+      textTooltip="Add exist event from other user by ID event"
+      [callbackFunction]="toggleInputToAddById"
+    ></app-single-button>
+    <app-single-button
+      namePng="Id"
+      textTooltip="Share Id to your friends"
+      [callbackFunction]="showId"
+    ></app-single-button>
+  </div>
+  <div class="marginLeft">
+    <app-single-button
+      namePng="FullScreen"
+      textTooltip="Turn on screensaver mode"
+      [callbackFunction]="turnOnScreenSaver"
+    ></app-single-button>
+  </div>
 </div>

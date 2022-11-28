@@ -1,3 +1,4 @@
+import { ModalManageService } from './../../../ui/modal-alert/modal-manage.service';
 import { Router } from '@angular/router';
 import { Component, Input } from '@angular/core';
 import { UserDataService } from 'src/app/services/user-data/user-data.service';
@@ -12,7 +13,11 @@ export class ButtonsPanelComponent {
   id = '';
   activeInputAddById = false;
 
-  constructor(private router: Router, private userData: UserDataService) {}
+  constructor(
+    private router: Router,
+    private userData: UserDataService,
+    private modal: ModalManageService
+  ) {}
   @Input() screenSaverFn!: () => void;
 
   addEvent = () => {
@@ -41,6 +46,16 @@ export class ButtonsPanelComponent {
           this.userData.choosenEvent.value ||
           sortingEventsByDates(this.userData.eventsUser.value)[0].eventId,
       },
+    });
+  };
+
+  showId = () => {
+    navigator.clipboard.writeText(this.getMainEventId());
+
+    this.modal.openModal({
+      title: `
+ID has been copied to the clipboard`,
+      description: `You can use this Id to share your event for your friends. \n ID: ${this.getMainEventId()}`,
     });
   };
 
