@@ -49,13 +49,7 @@ button {
       width: 32px;
     }
     &::after {
-      top: -28px;
-      z-index: 5;
-
-      padding: 2px 4px;
-      left: 50%;
-
-      max-width: 175px;
+      display: none;
     }
   }
 }

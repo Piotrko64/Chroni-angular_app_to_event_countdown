@@ -15,8 +15,10 @@ export class MainPageComponent implements OnInit {
   @ViewChild('mainInfo') mainInfo!: ElementRef<HTMLDivElement>;
   choosenEvent: EventUser | undefined;
   eventList: AllEvents = [];
+  isScreenSaverMode = false;
 
   turnOnScreenSaverMode = () => {
+    this.isScreenSaverMode = true;
     const screen = this.mainInfo?.nativeElement;
     if (screen.requestFullscreen) {
       screen.requestFullscreen();

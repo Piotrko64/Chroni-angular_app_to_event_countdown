@@ -64,6 +64,26 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+* {
+  scrollbar-width: auto;
+  scrollbar-color: var(--fontColor) #ffffff;
+}
+
+*::-webkit-scrollbar {
+  width: 16px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #c91d2e;
+  border-radius: 9px;
+  border: 2px solid white;
+}
+
 @media (max-width: 1450px) {
   html {
     font-size: 22px;
