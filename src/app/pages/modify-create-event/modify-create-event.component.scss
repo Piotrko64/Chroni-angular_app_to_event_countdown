@@ -4,6 +4,10 @@
   align-items: center;
   height: 100vh;
   form {
+    .buttonsContainer {
+      display: flex;
+      gap: 10px;
+    }
     h1 {
       color: var(--fontColor);
       font-family: "Oswald";

@@ -6,7 +6,7 @@
   <div class="info">
     <h2>{{ title | sliceText }}</h2>
 
-    <div class="flexRow">
+    <div class="flexRow" *ngIf="!loadingForDeleting">
       <app-single-button
         namePng="Eye"
         textTooltip="Show on main screen"
@@ -17,6 +17,18 @@
         textTooltip="Update this event"
         [callbackFunction]="updateThisEvent"
       ></app-single-button>
+      <app-single-button
+        namePng="Trash"
+        textTooltip="Delete this event"
+        [callbackFunction]="deleteThisEvent"
+      ></app-single-button>
+      <app-single-button
+        namePng="Id"
+        textTooltip="Copy Id to share your event"
+        [callbackFunction]="showId"
+      ></app-single-button>
     </div>
+
+    <app-auth-loader *ngIf="loadingForDeleting"></app-auth-loader>
   </div>
 </div>

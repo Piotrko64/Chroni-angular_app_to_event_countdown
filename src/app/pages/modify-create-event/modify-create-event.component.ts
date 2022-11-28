@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Route } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 import { UserDataService } from 'src/app/services/user-data/user-data.service';
 
 @Component({
@@ -11,7 +11,8 @@ import { UserDataService } from 'src/app/services/user-data/user-data.service';
 export class ModifyCreateEventComponent {
   constructor(
     private route: ActivatedRoute,
-    private dataUser: UserDataService
+    private dataUser: UserDataService,
+    private router: Router
   ) {}
 
   titleForm = 'Add new event';
@@ -30,6 +31,10 @@ export class ModifyCreateEventComponent {
       Validators.maxLength(300)
     ),
   });
+
+  back() {
+    this.router.navigate(['home']);
+  }
 
   ngOnInit() {
     this.route.queryParams.subscribe((eventId) => {

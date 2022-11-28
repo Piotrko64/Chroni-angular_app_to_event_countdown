@@ -2,6 +2,7 @@ import { AllEvents } from './../../../@types/DataEvents';
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { EventUser } from 'src/@types/DataEvents';
 import { UserDataService } from 'src/app/services/user-data/user-data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-main-page',
@@ -9,7 +10,7 @@ import { UserDataService } from 'src/app/services/user-data/user-data.service';
   styleUrls: ['./main-page.component.scss'],
 })
 export class MainPageComponent implements OnInit {
-  constructor(private userData: UserDataService) {}
+  constructor(private userData: UserDataService, private router: Router) {}
 
   @ViewChild('mainInfo') mainInfo!: ElementRef<HTMLDivElement>;
   choosenEvent: EventUser | undefined;
@@ -20,6 +21,10 @@ export class MainPageComponent implements OnInit {
     if (screen.requestFullscreen) {
       screen.requestFullscreen();
     }
+  };
+
+  addNewEvent = () => {
+    this.router.navigate(['eventManage']);
   };
 
   ngOnInit(): void {

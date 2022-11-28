@@ -101,7 +101,7 @@ export class UserDataService {
           this.isLoading.next(false);
           this.modal.openModal({
             title: 'Bad news!',
-            description: error.error.err,
+            description: error.error.err || 'Something is wrong...',
           });
         },
       });
@@ -143,6 +143,7 @@ export class UserDataService {
             title: 'We add new event!!!',
             description: '🥳🥳🥳',
           });
+          this.router.navigate(['home']);
         },
         error: (err) => {
           console.log(err);

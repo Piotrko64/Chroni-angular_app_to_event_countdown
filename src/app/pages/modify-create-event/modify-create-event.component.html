@@ -51,10 +51,17 @@
     >
       Max 300 characters
     </div>
-    <app-ordinary-button
-      text="Add"
-      addClass="login"
-      type="submit"
-    ></app-ordinary-button>
+    <div class="buttonsContainer">
+      <app-ordinary-button
+        text="Back"
+        addClass="register"
+        [callbackFunction]="back"
+      ></app-ordinary-button>
+      <app-ordinary-button
+        text="Add"
+        addClass="login"
+        type="submit"
+      ></app-ordinary-button>
+    </div>
   </form>
 </div>
