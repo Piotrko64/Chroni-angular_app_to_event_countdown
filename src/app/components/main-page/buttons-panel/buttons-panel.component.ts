@@ -26,6 +26,14 @@ export class ButtonsPanelComponent {
   addEventById() {
     this.userData.addById(this.id);
   }
+
+  private getMainEventId() {
+    return (
+      this.userData.choosenEvent.value ||
+      sortingEventsByDates(this.userData.eventsUser.value)[0].eventId
+    );
+  }
+
   editThisEvent = () => {
     this.router.navigate(['eventManage'], {
       queryParams: {
@@ -34,6 +42,10 @@ export class ButtonsPanelComponent {
           sortingEventsByDates(this.userData.eventsUser.value)[0].eventId,
       },
     });
+  };
+
+  deleteMainEvent = () => {
+    this.userData.deleteEvent(this.getMainEventId());
   };
 
   turnOnScreenSaver = () => {

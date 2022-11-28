@@ -30,8 +30,37 @@ export class UserDataService {
   choosenEvent = new BehaviorSubject<string>('');
 
   changeChoosenEvent(id: string) {
-    console.log(id);
     this.choosenEvent.next(id);
+  }
+
+  deleteEvent(eventId: string) {
+    this.http
+      .delete<EventById>(`${environment.backendUrl}/api/deleteEvent`, {
+        body: {
+          eventId,
+        },
+        withCredentials: true,
+      })
+      .subscribe({
+        next: (data) => {
+          this.eventsUser.next(
+            this.eventsUser.value.filter((event) => event.eventId !== eventId)
+          );
+
+          this.choosenEvent.next('');
+
+          this.modal.openModal({
+            title: 'Yeah!',
+            description: data.message,
+          });
+        },
+        error: () => {
+          this.modal.openModal({
+            title: 'Oh noo!',
+            description: 'Something is wrong. Please try later',
+          });
+        },
+      });
   }
 
   registerUser(dataUser: DataAuth) {
@@ -77,8 +106,6 @@ export class UserDataService {
         },
       });
   }
-
-  deleteEvent() {}
 
   logOut() {
     this.router.navigate([''], { replaceUrl: true });
