@@ -16,6 +16,7 @@ export class ModifyCreateEventComponent {
   ) {}
 
   titleForm = 'Add new event';
+  buttonTitle = 'Add';
   eventId: null | string = null;
 
   eventForm = new FormGroup({
@@ -40,6 +41,7 @@ export class ModifyCreateEventComponent {
     this.route.queryParams.subscribe((eventId) => {
       this.eventId = eventId['eventId'];
       this.titleForm = this.eventId ? 'Modify event' : 'Add new event';
+      this.buttonTitle = this.titleForm === 'Add new event' ? 'Add' : 'Update';
     });
 
     if (this.eventId) {
@@ -59,10 +61,20 @@ export class ModifyCreateEventComponent {
   }
   onSubmit() {
     const { titleEvent, timeEvent, description } = this.eventForm.value;
-    this.dataUser.addEvent({
-      title: titleEvent,
-      dataEvent: new Date(timeEvent).toISOString(),
-      description,
-    });
+
+    if (!this.eventId) {
+      this.dataUser.addEvent({
+        title: titleEvent,
+        dataEvent: new Date(timeEvent).toISOString(),
+        description,
+      });
+    } else {
+      this.dataUser.updateEvent({
+        eventId: this.eventId,
+        title: titleEvent,
+        dataEvent: new Date(timeEvent).toISOString(),
+        description,
+      });
+    }
   }
 }
