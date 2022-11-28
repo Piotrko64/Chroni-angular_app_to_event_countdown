@@ -4,6 +4,7 @@ import { EventUser } from 'src/@types/DataEvents';
 import { UserDataService } from 'src/app/services/user-data/user-data.service';
 import { Router } from '@angular/router';
 import { fromEvent } from 'rxjs';
+import { findWallpaper } from 'src/app/data/wallpapers/wallpapersData';
 
 @Component({
   selector: 'app-main-page',
@@ -32,19 +33,7 @@ export class MainPageComponent implements OnInit {
   };
 
   getWallpaper() {
-    const hours = new Date().getHours();
-
-    function getName() {
-      if (hours > 18) {
-        return 'night';
-      }
-      if (hours > 13) {
-        return 'sky';
-      } else {
-        return 'water';
-      }
-    }
-    return `url('/assets/wallpapers/${getName()}.jpg')`;
+    return `url('/assets/wallpapers/${findWallpaper()}.jpg')`;
   }
 
   ngOnInit(): void {
