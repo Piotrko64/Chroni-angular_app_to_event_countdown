@@ -29,6 +29,7 @@ import { SingleButtonComponent } from './components/main-page/buttons-panel/sing
 import { ModifyCreateEventComponent } from './pages/modify-create-event/modify-create-event.component';
 import { FormsModule } from '@angular/forms';
 import { SliceTextPipe } from './pipes/slice-text.pipe';
+import { SingleEventComponent } from './components/main-page/list-events/single-event/single-event.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,6 +56,7 @@ import { SliceTextPipe } from './pipes/slice-text.pipe';
     SingleButtonComponent,
     ModifyCreateEventComponent,
     SliceTextPipe,
+    SingleEventComponent,
   ],
   imports: [
     BrowserModule,

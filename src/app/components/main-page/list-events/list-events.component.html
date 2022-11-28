@@ -10,15 +10,11 @@
   </div>
   <div class="listContainer" [ngClass]="{ active: openList }">
     <div *ngFor="let set of listEvents" class="singleEvent">
-      <app-whole-set-info
-        [eventDate]="set.dataEvent"
-        [versionList]="true"
-      ></app-whole-set-info>
-      <div class="info">
-        <h2>{{ set.title | sliceText }}</h2>
-        <button (click)="changeMainEvent(set.eventId)">oko</button>
-        <button (click)="updateThisEvent(set.eventId)">update</button>
-      </div>
+      <app-single-event
+        [title]="set.title"
+        [dataEvent]="set.dataEvent"
+        [eventId]="set.eventId"
+      ></app-single-event>
     </div>
   </div>
 </div>

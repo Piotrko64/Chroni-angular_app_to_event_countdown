@@ -12,8 +12,7 @@ import { Router } from '@angular/router';
 export class ListEventsComponent implements OnInit {
   constructor(
     private userData: UserDataService,
-    private listManage: ListActiveService,
-    private router: Router
+    private listManage: ListActiveService
   ) {}
 
   listEvents: AllEvents = [];
@@ -21,19 +20,6 @@ export class ListEventsComponent implements OnInit {
 
   toggleOpenList() {
     this.listManage.toggleActiveList();
-  }
-
-  updateThisEvent(id: string) {
-    this.router.navigate(['/eventManage'], {
-      queryParams: {
-        eventId: id,
-      },
-    });
-  }
-
-  changeMainEvent(id: string) {
-    this.userData.changeChoosenEvent(id);
-    this.toggleOpenList();
   }
 
   ngOnInit() {
