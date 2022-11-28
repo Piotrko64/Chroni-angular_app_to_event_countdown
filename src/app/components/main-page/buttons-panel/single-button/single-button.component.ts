@@ -8,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class SingleButtonComponent implements OnInit {
   @Input() textTooltip = '';
   @Input() namePng = '';
-  @Input() callbackFunction = () => {};
+  @Input() callbackFunction = (arg?: any) => {};
 
   ngOnInit(): void {}
 }

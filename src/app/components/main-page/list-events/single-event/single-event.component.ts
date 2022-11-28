@@ -19,18 +19,18 @@ export class SingleEventComponent implements OnInit {
   @Input() dataEvent!: string;
   @Input() eventId!: string;
 
-  updateThisEvent(id: string) {
+  updateThisEvent = () => {
     this.router.navigate(['/eventManage'], {
       queryParams: {
-        eventId: id,
+        eventId: this.eventId,
       },
     });
-  }
+  };
 
-  changeMainEvent(id: string) {
-    this.userData.changeChoosenEvent(id);
+  changeMainEvent = () => {
+    this.userData.changeChoosenEvent(this.eventId);
     this.listManage.toggleActiveList();
-  }
+  };
 
   ngOnInit(): void {}
 }

@@ -9,12 +9,11 @@
     />
   </div>
   <div class="listContainer" [ngClass]="{ active: openList }">
-    <div *ngFor="let set of listEvents" class="singleEvent">
-      <app-single-event
-        [title]="set.title"
-        [dataEvent]="set.dataEvent"
-        [eventId]="set.eventId"
-      ></app-single-event>
-    </div>
+    <app-single-event
+      *ngFor="let set of listEvents"
+      [title]="set.title"
+      [dataEvent]="set.dataEvent"
+      [eventId]="set.eventId"
+    ></app-single-event>
   </div>
 </div>

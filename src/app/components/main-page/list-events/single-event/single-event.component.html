@@ -1,9 +1,22 @@
-<app-whole-set-info
-  [eventDate]="dataEvent"
-  [versionList]="true"
-></app-whole-set-info>
-<div class="info">
-  <h2>{{ title | sliceText }}</h2>
-  <button (click)="changeMainEvent(eventId)">oko</button>
-  <button (click)="updateThisEvent(eventId)">update</button>
+<div class="singleEvent">
+  <app-whole-set-info
+    [eventDate]="dataEvent"
+    [versionList]="true"
+  ></app-whole-set-info>
+  <div class="info">
+    <h2>{{ title | sliceText }}</h2>
+
+    <div class="flexRow">
+      <app-single-button
+        namePng="Eye"
+        textTooltip="Show on main screen"
+        [callbackFunction]="changeMainEvent"
+      ></app-single-button>
+      <app-single-button
+        namePng="Update"
+        textTooltip="Update this event"
+        [callbackFunction]="updateThisEvent"
+      ></app-single-button>
+    </div>
+  </div>
 </div>

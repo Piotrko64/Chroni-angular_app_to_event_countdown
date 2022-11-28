@@ -24,7 +24,7 @@ export class AppComponent implements OnInit {
       this.modalInfo = info;
     });
     if (findSessionIdCookie()) {
-      // this.loginUser.autoLogin();
+      this.loginUser.autoLogin();
     }
   }
 }
