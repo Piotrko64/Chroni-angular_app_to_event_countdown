@@ -12,6 +12,9 @@ main {
   justify-content: center;
   align-items: center;
 }
+.screenSaver {
+  transform: translateY(-80px);
+}
 h1 {
   color: var(--fontColor);
   font-size: 3rem;

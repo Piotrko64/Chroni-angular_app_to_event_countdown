@@ -3,6 +3,7 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { EventUser } from 'src/@types/DataEvents';
 import { UserDataService } from 'src/app/services/user-data/user-data.service';
 import { Router } from '@angular/router';
+import { fromEvent } from 'rxjs';
 
 @Component({
   selector: 'app-main-page',
@@ -19,6 +20,7 @@ export class MainPageComponent implements OnInit {
 
   turnOnScreenSaverMode = () => {
     this.isScreenSaverMode = true;
+
     const screen = this.mainInfo?.nativeElement;
     if (screen.requestFullscreen) {
       screen.requestFullscreen();
@@ -30,6 +32,14 @@ export class MainPageComponent implements OnInit {
   };
 
   ngOnInit(): void {
+    const press = fromEvent<Event>(document, 'fullscreenchange');
+    press.subscribe(() => {
+      console.log(this.isScreenSaverMode);
+      if (window.innerHeight !== screen.height) {
+        this.isScreenSaverMode = false;
+      }
+    });
+
     this.userData.eventsUser.subscribe((data: AllEvents) => {
       this.eventList = data;
       if (!this.userData.choosenEvent.value) {

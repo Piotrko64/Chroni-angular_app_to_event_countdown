@@ -5,6 +5,10 @@
       [eventDate]="choosenEvent.dataEvent"
       [title]="choosenEvent.title"
       [description]="choosenEvent.description"
+      [isScreenSaverMode]="isScreenSaverMode"
+      [ngClass]="{
+        screenSaver: isScreenSaverMode
+      }"
     ></app-whole-set-info>
   </div>
   <app-buttons-panel

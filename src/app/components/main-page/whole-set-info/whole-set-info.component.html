@@ -1,5 +1,18 @@
-<div class="containerEvent" [title]="eventDate | date: 'longDate'">
-  <h1 *ngIf="title">{{ title }}</h1>
+<div
+  class="containerEvent"
+  [title]="eventDate | date: 'longDate'"
+  [ngClass]="{
+    screenSaver: isScreenSaverMode
+  }"
+>
+  <h1
+    *ngIf="title"
+    [ngClass]="{
+      screenSaverTitle: isScreenSaverMode
+    }"
+  >
+    {{ title }}
+  </h1>
   <div
     class="containerAllSets"
     *ngIf="!objectCountdown.end"
@@ -13,5 +26,5 @@
     ></app-single-set-data-info>
   </div>
   <div *ngIf="objectCountdown.end" class="end">THE END</div>
-  <p *ngIf="description">{{ description }}</p>
+  <p *ngIf="!isScreenSaverMode && description">{{ description }}</p>
 </div>
