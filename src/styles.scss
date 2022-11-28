@@ -64,3 +64,26 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+@media (max-width: 1450px) {
+  html {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 720px) {
+  html {
+    font-size: 21px;
+  }
+}
+
+@media (max-width: 540px) {
+  html {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 440px) {
+  html {
+    font-size: 19px;
+  }
+}

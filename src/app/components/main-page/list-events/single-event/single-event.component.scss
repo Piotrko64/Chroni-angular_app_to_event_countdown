@@ -1,6 +1,8 @@
 .singleEvent {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+
   margin-top: 60px;
   max-width: 1250px;
   margin-left: auto;
@@ -27,5 +29,27 @@
     align-items: center;
     gap: 10px;
     margin-top: 15px;
+  }
+}
+@media (max-width: 1450px) {
+  .singleEvent {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .info {
+      margin: 0 10px 0 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 100%;
+      max-width: 550px;
+      h2 {
+        color: var(--fontColor);
+        font-family: "Oswald";
+        font-weight: 400;
+      }
+    }
   }
 }

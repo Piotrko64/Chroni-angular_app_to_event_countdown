@@ -25,7 +25,7 @@ export class WholeSetInfoComponent implements OnInit {
     hours: 0,
   };
 
-  ngOnInit(): void {
+  ngOnInit() {
     interval(1000).subscribe(() => {
       this.objectCountdown = calculateDifferentDates(this.eventDate);
     });

@@ -1,7 +1,18 @@
 .buttonsContainer {
   display: flex;
+  padding: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .marginLeft {
   margin-left: 15px;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+@media (max-width: 900px) {
+  .marginLeft {
+    margin-left: 0px;
+    display: flex;
+  }
 }
