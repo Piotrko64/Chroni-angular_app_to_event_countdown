@@ -31,6 +31,22 @@ export class MainPageComponent implements OnInit {
     this.router.navigate(['eventManage']);
   };
 
+  getWallpaper() {
+    const hours = new Date().getHours();
+
+    function getName() {
+      if (hours > 18) {
+        return 'night';
+      }
+      if (hours > 13) {
+        return 'sky';
+      } else {
+        return 'water';
+      }
+    }
+    return `url('/assets/wallpapers/${getName()}.jpg')`;
+  }
+
   ngOnInit(): void {
     const press = fromEvent<Event>(document, 'fullscreenchange');
     press.subscribe(() => {

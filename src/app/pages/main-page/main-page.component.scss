@@ -1,6 +1,6 @@
 main {
   background-color: var(--backColor);
-  height: 90vh;
+  height: 100vh;
   width: 100vw;
   display: flex;
   justify-content: center;
@@ -12,8 +12,18 @@ main {
   justify-content: center;
   align-items: center;
 }
+.wallpaper {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: none;
+}
 .screenSaver {
   transform: translateY(-80px);
+
+  background-color: rgba(1, 1, 2, 0.7);
+  box-shadow: 0px 0px 100px 36px rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
 }
 h1 {
   color: var(--fontColor);

@@ -1,6 +1,15 @@
 <app-navigation></app-navigation>
 <main *ngIf="choosenEvent">
-  <div #mainInfo class="center">
+  <div
+    #mainInfo
+    class="center"
+    [ngClass]="{
+      wallpaper: isScreenSaverMode
+    }"
+    [ngStyle]="{
+      backgroundImage: isScreenSaverMode ? getWallpaper() : 'none'
+    }"
+  >
     <app-whole-set-info
       [eventDate]="choosenEvent.dataEvent"
       [title]="choosenEvent.title"
