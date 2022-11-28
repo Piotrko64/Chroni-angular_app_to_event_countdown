@@ -1,12 +1,12 @@
 export type AllEvents = Array<EventUser>;
 
 export interface EventUser {
-  userId: number;
+  userId?: number;
   eventId: string;
   title: string;
   description: string;
   dataEvent: string;
-  sessionId: string;
+  sessionId?: string;
 }
 
 export interface AddingEvent {
@@ -15,7 +15,14 @@ export interface AddingEvent {
   dataEvent: string;
 }
 
-export interface EventById {
+export type UpdateEvent = {
+  eventId: string;
+  title: string;
+  description: string;
+  dataEvent: string;
+};
+
+export interface ResponseEvent {
   message: string;
   data: {
     userId: number;
@@ -23,7 +30,7 @@ export interface EventById {
     title: string;
     description: string;
     dataEvent: string;
-    sessionId: string;
+    sessionId?: string;
   };
 }
 

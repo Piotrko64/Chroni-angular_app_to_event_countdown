@@ -19,6 +19,7 @@ button {
     content: attr(textTooltip);
     position: absolute;
     top: -30px;
+    z-index: 5;
     background-color: var(--helpDarkColor);
     color: white;
     padding: 3px 5px;
@@ -29,6 +30,7 @@ button {
     opacity: 0;
     transition: all 0.2s ease-in-out;
     width: max-content;
+    max-width: 200px;
   }
   &:hover::after {
     opacity: 1;

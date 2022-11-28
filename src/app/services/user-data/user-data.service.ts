@@ -2,8 +2,9 @@ import {
   AddingEvent,
   AllEvents,
   DataEvents,
-  EventById,
   EventUser,
+  ResponseEvent,
+  UpdateEvent,
 } from './../../../@types/DataEvents';
 import { ModalManageService } from './../../ui/modal-alert/modal-manage.service';
 import { HttpClient } from '@angular/common/http';
@@ -35,7 +36,7 @@ export class UserDataService {
 
   deleteEvent(eventId: string) {
     this.http
-      .delete<EventById>(`${environment.backendUrl}/api/deleteEvent`, {
+      .delete<ResponseEvent>(`${environment.backendUrl}/api/deleteEvent`, {
         body: {
           eventId,
         },
@@ -84,6 +85,7 @@ export class UserDataService {
         },
       });
   }
+
   loginUser(dataUser: DataAuth) {
     this.isLoading.next(true);
     this.http
@@ -155,9 +157,44 @@ export class UserDataService {
       });
   }
 
+  updateEvent(body: UpdateEvent) {
+    this.http
+      .put<ResponseEvent>(
+        `${environment.backendUrl}/api/updateEvent`,
+
+        body,
+        {
+          withCredentials: true,
+        }
+      )
+      .subscribe({
+        next: (data) => {
+          this.modal.openModal({
+            title: 'Everything is ok!',
+            description: data.message,
+          });
+
+          const events = this.eventsUser.value;
+          const indexEvent = this.eventsUser.value.findIndex(
+            (event) => event.eventId === body.eventId
+          );
+          events[indexEvent] = body;
+
+          this.eventsUser.next(events);
+          this.router.navigate(['home']);
+        },
+        error: (err) => {
+          this.modal.openModal({
+            title: 'Something went wrong...',
+            description: err.error.err,
+          });
+        },
+      });
+  }
+
   addById(eventId: string) {
     this.http
-      .post<EventById>(
+      .post<ResponseEvent>(
         `${environment.backendUrl}/api/addEventById`,
         {
           eventId,
@@ -167,7 +204,7 @@ export class UserDataService {
         }
       )
       .subscribe({
-        next: (data: EventById) => {
+        next: (data) => {
           this.eventsUser.next(this.eventsUser.getValue().concat([data.data]));
           this.modal.openModal({
             title: data.message,
