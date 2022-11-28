@@ -33,9 +33,9 @@ export class ModifyCreateEventComponent {
     ),
   });
 
-  back() {
+  back = () => {
     this.router.navigate(['home']);
-  }
+  };
 
   ngOnInit() {
     this.route.queryParams.subscribe((eventId) => {

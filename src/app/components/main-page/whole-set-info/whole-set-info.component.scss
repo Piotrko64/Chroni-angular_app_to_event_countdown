@@ -18,7 +18,13 @@
 }
 p {
   text-align: center;
-  margin: 20px auto;
+  margin-top: 30px;
+  min-height: 45px;
+  margin-bottom: 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 h1 {
   text-align: center;
@@ -26,4 +32,5 @@ h1 {
   font-family: "Oswald";
   font-weight: 600;
   font-size: 2.5em;
+  margin-top: 0;
 }

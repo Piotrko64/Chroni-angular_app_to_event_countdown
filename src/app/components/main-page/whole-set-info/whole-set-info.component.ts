@@ -16,6 +16,7 @@ export class WholeSetInfoComponent implements OnInit {
   @Input() description = '';
   @Input() versionList = false;
   typesOfNumbers = typesNumbers;
+
   objectCountdown: ObjectCountdown = {
     end: false,
     days: 0,

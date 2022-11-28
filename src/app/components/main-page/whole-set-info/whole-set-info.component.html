@@ -1,4 +1,4 @@
-<div class="containerEvent">
+<div class="containerEvent" [title]="eventDate | date: 'longDate'">
   <h1 *ngIf="title">{{ title }}</h1>
   <div
     class="containerAllSets"
@@ -13,5 +13,5 @@
     ></app-single-set-data-info>
   </div>
   <div *ngIf="objectCountdown.end" class="end">THE END</div>
-  <p>{{ description }}</p>
+  <p *ngIf="description">{{ description }}</p>
 </div>
