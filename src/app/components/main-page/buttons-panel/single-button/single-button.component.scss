@@ -60,3 +60,8 @@ button {
     margin: 8px;
   }
 }
+@media (max-width: 440px) {
+  button {
+    margin: 12px;
+  }
+}
