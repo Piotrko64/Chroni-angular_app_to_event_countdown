@@ -33,8 +33,9 @@ export class AppComponent implements OnInit {
         new Notification(perm, { body: 'aaa' });
       }
     });
-
+    alert(document.cookie);
     if (findSessionIdCookie()) {
+      alert(document.cookie + 'yes');
       this.loginUser.autoLogin();
     }
   }
