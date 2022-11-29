@@ -11,6 +11,7 @@
     h1 {
       color: var(--fontColor);
       font-family: "Oswald";
+      text-align: center;
     }
     input {
       color-scheme: dark;
@@ -266,5 +267,6 @@
   form {
     margin: 40px 5px;
     min-width: 245px;
+    width: 90vw;
   }
 }
