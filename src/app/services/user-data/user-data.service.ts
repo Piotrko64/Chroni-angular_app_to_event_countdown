@@ -15,6 +15,7 @@ import { DataAuth } from 'src/app/@types/DataAuth';
 import { Router } from '@angular/router';
 import { clearCookies } from 'src/app/utils/cookies/clearCookies';
 import { sortingEventsByDates } from 'src/app/utils/sortingEventsByDates';
+import { findSessionIdCookie } from 'src/app/utils/cookies/findSessionIdCookie';
 
 @Injectable({
   providedIn: 'root',
@@ -132,7 +133,7 @@ export class UserDataService {
       .post<{ addNewEvent: EventUser }>(
         `${environment.backendUrl}/api/addEvent`,
 
-        body,
+        { ...body, cookie: findSessionIdCookie() },
         {
           withCredentials: true,
         }
