@@ -54,7 +54,6 @@ body {
   background-color: var(--backColor);
   height: 100vh;
   width: 100vw;
-  overflow-x: none;
 }
 
 html,
@@ -95,10 +94,21 @@ body {
   html {
     font-size: 21px;
   }
+  *::-webkit-scrollbar {
+    width: 12px;
+  }
 }
 
 @media (max-width: 540px) {
   html {
     font-size: 20px;
+  }
+  *::-webkit-scrollbar {
+    width: 8px;
+  }
+  *::-webkit-scrollbar-thumb {
+    background-color: #c91d2e;
+    border-radius: 5px;
+    border: 1px solid white;
   }
 }

@@ -13,7 +13,7 @@ button {
   justify-content: center;
   align-items: center;
   img {
-    width: 37px;
+    width: 39px;
   }
   &::after {
     content: attr(textTooltip);
@@ -62,6 +62,14 @@ button {
 }
 @media (max-width: 440px) {
   button {
-    margin: 12px;
+    margin: 14px;
+    padding: 5px;
+    img {
+      width: 38px;
+    }
+
+    &:hover::after {
+      display: none;
+    }
   }
 }
