@@ -92,7 +92,9 @@ button {
 }
 @media (max-width: 540px) {
   .addById,
-  .close {
+  .close,
+  .register,
+  .login {
     font-size: 0.9rem;
   }
 }
