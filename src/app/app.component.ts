@@ -23,6 +23,16 @@ export class AppComponent implements OnInit {
     this.modal.modalInfo.subscribe((info: Modal) => {
       this.modalInfo = info;
     });
+
+    new Notification('a');
+
+    Notification.requestPermission().then((perm) => {
+      if (perm === 'granted') {
+        console.log('granted');
+        new Notification(perm, { body: 'aaa' });
+      }
+    });
+
     if (findSessionIdCookie()) {
       this.loginUser.autoLogin();
     }

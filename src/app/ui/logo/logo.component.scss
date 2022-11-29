@@ -1,0 +1,10 @@
+svg {
+  height: 100%;
+  width: 140px;
+}
+@media (max-width: 720px) {
+  svg {
+    height: 80%;
+    width: 130px;
+  }
+}

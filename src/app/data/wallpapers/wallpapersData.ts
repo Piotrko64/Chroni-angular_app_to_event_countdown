@@ -1,12 +1,13 @@
 const wallpapersData = [
   {
     name: 'city',
-    hours: 23,
+    hours: 22,
   },
   {
     name: 'night',
-    hours: 20,
+    hours: 19,
   },
+
   {
     name: 'cat',
     hours: 17,
@@ -26,6 +27,10 @@ const wallpapersData = [
   {
     name: 'skyMorning',
     hours: 6,
+  },
+  {
+    name: 'sun',
+    hours: 4,
   },
   {
     name: 'water',

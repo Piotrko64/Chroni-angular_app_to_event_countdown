@@ -11,6 +11,16 @@ nav {
   z-index: 0;
   align-items: center;
 }
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .logo {
   font-family: "Oswald";
   font-size: 1.4rem;
