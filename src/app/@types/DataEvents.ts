@@ -38,4 +38,5 @@ export interface DataEvents {
   dataUser: {
     allEvents: AllEvents;
   };
+  cookie: string;
 }

@@ -98,6 +98,7 @@ export class UserDataService {
           this.router.navigate(['home'], { replaceUrl: true });
           this.isAuth.next(true);
           this.eventsUser.next(sortingEventsByDates(data.dataUser.allEvents));
+          document.cookie = data.cookie;
         },
         error: (error) => {
           this.isLoading.next(false);
@@ -238,6 +239,7 @@ export class UserDataService {
           this.router.navigate(['/home'], {
             replaceUrl: true,
           });
+          document.cookie = data.cookie;
         },
         error: (error) => {
           this.isLoading.next(false);
