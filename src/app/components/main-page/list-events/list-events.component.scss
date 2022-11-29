@@ -3,6 +3,7 @@
   bottom: 0;
   left: 0;
   width: 100vw;
+  z-index: 9999;
   .headerList {
     z-index: 999;
     position: relative;
@@ -15,6 +16,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 1rem;
     img {
       width: 35px;
       margin-left: 10px;
@@ -39,4 +41,16 @@
 
 .headerList {
   background-color: var(--fontColor);
+}
+@media (max-width: 720px) {
+  .sectionList {
+    .headerList {
+      font-size: 1.2rem;
+    }
+    .listContainer {
+      &.active {
+        max-height: calc(100vh - 120px);
+      }
+    }
+  }
 }

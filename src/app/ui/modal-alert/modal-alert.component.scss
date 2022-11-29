@@ -36,3 +36,18 @@ p {
   text-align-last: center;
   margin-bottom: 20px;
 }
+@media (max-width: 720px) {
+  .modalContainer {
+    width: 95vw;
+    min-width: 240px;
+    padding: 10px;
+    transform: translate(-50%, -50%);
+
+    border: 3px solid white;
+
+    margin: 8px;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+}

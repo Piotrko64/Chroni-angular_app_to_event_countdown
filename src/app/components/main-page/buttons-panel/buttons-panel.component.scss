@@ -48,3 +48,9 @@ input {
     display: flex;
   }
 }
+@media (max-width: 540px) {
+  .buttonsContainer {
+    padding: 10px;
+    max-width: 240px;
+  }
+}

@@ -76,7 +76,7 @@ body {
 }
 
 *::-webkit-scrollbar-track {
-  background: #000000;
+  background: var(--backColor);
 }
 
 *::-webkit-scrollbar-thumb {
@@ -100,11 +100,5 @@ body {
 @media (max-width: 540px) {
   html {
     font-size: 20px;
-  }
-}
-
-@media (max-width: 440px) {
-  html {
-    font-size: 19px;
   }
 }
