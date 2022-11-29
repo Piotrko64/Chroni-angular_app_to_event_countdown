@@ -1,4 +1,4 @@
-import { TypesDate } from 'src/@types/ObjectCountdown';
+import { TypesDate } from 'src/app/@types/ObjectCountdown';
 
 export const typesNumbers: Array<TypesDate> = [
   'days',

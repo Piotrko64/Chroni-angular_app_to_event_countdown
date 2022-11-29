@@ -1,7 +1,7 @@
 import { calculateDifferentDates } from 'src/app/utils/calculateDifferentDates';
 import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { interval } from 'rxjs';
-import { ObjectCountdown } from 'src/@types/ObjectCountdown';
+import { ObjectCountdown } from 'src/app/@types/ObjectCountdown';
 import { typesNumbers } from 'src/app/data/digitalClock/typesNumbers';
 
 @Component({

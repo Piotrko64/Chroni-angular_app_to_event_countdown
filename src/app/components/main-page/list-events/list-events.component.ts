@@ -1,6 +1,6 @@
 import { ListActiveService } from './../../../pages/main-page/list-active.service';
 import { Component, OnInit } from '@angular/core';
-import { AllEvents } from 'src/@types/DataEvents';
+import { AllEvents } from 'src/app/@types/DataEvents';
 import { UserDataService } from 'src/app/services/user-data/user-data.service';
 import { Router } from '@angular/router';
 

@@ -1,6 +1,6 @@
-import { AllEvents } from './../../../@types/DataEvents';
+import { AllEvents } from '../../@types/DataEvents';
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { EventUser } from 'src/@types/DataEvents';
+import { EventUser } from 'src/app/@types/DataEvents';
 import { UserDataService } from 'src/app/services/user-data/user-data.service';
 import { Router } from '@angular/router';
 import { fromEvent } from 'rxjs';

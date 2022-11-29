@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { Modal } from 'src/@types/Modal';
+import { Modal } from 'src/app/@types/Modal';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ModalManageService {
-  modalInfo = new BehaviorSubject({
+  modalInfo = new BehaviorSubject<Modal>({
     title: 'Chroni',
     description: `A countdown app for events you save.
   You can create new events and see how much time you have left to complete them. You can share events with others.

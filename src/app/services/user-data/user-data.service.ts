@@ -5,13 +5,13 @@ import {
   EventUser,
   ResponseEvent,
   UpdateEvent,
-} from './../../../@types/DataEvents';
+} from '../../@types/DataEvents';
 import { ModalManageService } from './../../ui/modal-alert/modal-manage.service';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, tap } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { DataAuth } from 'src/@types/DataAuth';
+import { DataAuth } from 'src/app/@types/DataAuth';
 import { Router } from '@angular/router';
 import { clearCookies } from 'src/app/utils/cookies/clearCookies';
 import { sortingEventsByDates } from 'src/app/utils/sortingEventsByDates';
