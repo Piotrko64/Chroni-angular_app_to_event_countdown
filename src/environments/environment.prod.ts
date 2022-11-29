@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  backendUrl: 'https://chroni.onrender.com',
+  backendUrl: 'http://localhost:3300',
 };
