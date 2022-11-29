@@ -40,6 +40,7 @@ export class UserDataService {
       .delete<ResponseEvent>(`${environment.backendUrl}/api/deleteEvent`, {
         body: {
           eventId,
+          cookie: findSessionIdCookie(),
         },
         withCredentials: true,
       })
@@ -120,6 +121,9 @@ export class UserDataService {
     this.isAuth.next(false);
     this.http
       .delete(`${environment.backendUrl}/api/logout`, {
+        body: {
+          cookie: findSessionIdCookie(),
+        },
         withCredentials: true,
       })
       .subscribe({
@@ -200,6 +204,7 @@ export class UserDataService {
         `${environment.backendUrl}/api/addEventById`,
         {
           eventId,
+          cookie: findSessionIdCookie(),
         },
         {
           withCredentials: true,
@@ -228,9 +233,13 @@ export class UserDataService {
 
     this.isLoading.next(true);
     this.http
-      .get<DataEvents>(`${environment.backendUrl}/api/autoLogin`, {
-        withCredentials: true,
-      })
+      .post<DataEvents>(
+        `${environment.backendUrl}/api/autoLogin`,
+        { cookie: findSessionIdCookie() },
+        {
+          withCredentials: true,
+        }
+      )
       .pipe(tap(() => this.isLoading.next(false)))
       .subscribe({
         next: (data) => {
