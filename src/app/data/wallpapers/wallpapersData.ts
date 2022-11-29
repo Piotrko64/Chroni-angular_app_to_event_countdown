@@ -4,7 +4,7 @@ const wallpapersData = [
     hours: 23,
   },
   {
-    name: 'lake',
+    name: 'night',
     hours: 20,
   },
   {

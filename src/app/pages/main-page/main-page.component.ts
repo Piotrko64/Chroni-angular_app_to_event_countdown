@@ -39,7 +39,6 @@ export class MainPageComponent implements OnInit {
   ngOnInit(): void {
     const press = fromEvent<Event>(document, 'fullscreenchange');
     press.subscribe(() => {
-      console.log(this.isScreenSaverMode);
       if (window.innerHeight !== screen.height) {
         this.isScreenSaverMode = false;
       }

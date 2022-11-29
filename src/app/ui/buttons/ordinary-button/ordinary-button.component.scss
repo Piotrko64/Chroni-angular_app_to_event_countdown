@@ -11,6 +11,20 @@
   margin-top: 20px;
   font-size: 0.95em;
 }
+.addById,
+.close {
+  font-size: 0.75;
+  padding: 5px 3px;
+  margin: 2px;
+}
+.addById {
+  background-color: var(--fontColor);
+  color: white;
+}
+.close {
+  background-color: white;
+  color: black;
+}
 button {
   cursor: pointer;
   min-width: 120px;
@@ -28,4 +42,51 @@ button {
 }
 .maxWidth {
   width: 100%;
+}
+@media (max-width: 1200px) {
+  .autoLog {
+    margin-top: 18px;
+    font-size: 0.9em;
+  }
+  .addById,
+  .close {
+    font-size: 0.72rem;
+  }
+
+  button {
+    cursor: pointer;
+    min-width: 90px;
+    padding: 8px 6px;
+
+    border-radius: 4px;
+
+    font-size: 0.95rem;
+
+    &:disabled {
+      font-size: 3.8rem;
+    }
+  }
+}
+
+@media (max-width: 720px) {
+  .autoLog {
+    margin-top: 16px;
+    font-size: 0.85em;
+  }
+  .addById,
+  .close {
+    font-size: 0.72rem;
+  }
+
+  button {
+    cursor: pointer;
+    min-width: 60px;
+    padding: 6px 4px;
+
+    font-size: 0.9rem;
+
+    &:disabled {
+      font-size: 3.6rem;
+    }
+  }
 }

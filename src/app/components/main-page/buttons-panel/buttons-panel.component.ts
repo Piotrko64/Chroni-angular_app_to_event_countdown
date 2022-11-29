@@ -24,13 +24,18 @@ export class ButtonsPanelComponent {
     this.router.navigate(['eventManage']);
   };
 
+  closeAddEventDiv = () => {
+    this.activeInputAddById = false;
+  };
+
   toggleInputToAddById = () => {
     this.activeInputAddById = !this.activeInputAddById;
   };
 
-  addEventById() {
+  addEventById = () => {
     this.userData.addById(this.id);
-  }
+    this.activeInputAddById = false;
+  };
 
   private getMainEventId() {
     return (

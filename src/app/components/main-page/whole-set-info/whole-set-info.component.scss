@@ -115,6 +115,7 @@ h1 {
 @media (max-width: 440px) {
   .containerAllSets {
     gap: 15px;
+    max-width: 320px;
     &.versionList {
       gap: 10px;
     }

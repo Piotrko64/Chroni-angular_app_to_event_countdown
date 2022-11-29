@@ -31,9 +31,11 @@ button {
     transition: opacity 0.2s ease-in-out;
     width: max-content;
     max-width: 200px;
+    display: none;
   }
   &:hover::after {
     opacity: 1;
+    display: block;
   }
 }
 @media (max-width: 900px) {
@@ -51,5 +53,10 @@ button {
     &::after {
       display: none;
     }
+  }
+}
+@media (max-width: 570px) {
+  button {
+    margin: 8px;
   }
 }
