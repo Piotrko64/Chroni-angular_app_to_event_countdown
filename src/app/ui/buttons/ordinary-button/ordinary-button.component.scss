@@ -90,3 +90,9 @@ button {
     }
   }
 }
+@media (max-width: 540px) {
+  .addById,
+  .close {
+    font-size: 0.9rem;
+  }
+}

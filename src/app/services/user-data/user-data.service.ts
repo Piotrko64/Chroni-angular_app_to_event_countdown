@@ -168,7 +168,7 @@ export class UserDataService {
       .put<ResponseEvent>(
         `${environment.backendUrl}/api/updateEvent`,
 
-        body,
+        { ...body, cookie: findSessionIdCookie() },
         {
           withCredentials: true,
         }

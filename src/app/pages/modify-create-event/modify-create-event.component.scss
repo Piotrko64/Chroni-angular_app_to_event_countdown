@@ -27,7 +27,7 @@
     z-index: 4;
     position: relative;
     box-shadow: 0px 0px 24px 0px var(--helpDarkColor);
-
+    min-width: 370px;
     .validAlert {
       font-size: 0.75rem;
       color: var(--fontColor);
@@ -261,6 +261,7 @@
   form {
     margin: 40px 5px;
     min-width: 370px;
+    width: 95vw;
   }
 }
 @media (max-width: 440px) {
