@@ -62,6 +62,17 @@ However basic appearance look very simple and minimalistic. The most space is ta
 
 <p align="center"> <img height="400" src="https://user-images.githubusercontent.com/77500425/204869815-631514e5-9409-4a64-9d9b-7f4321b9d439.png"/><p>
 
+Buttons below digital clock allow to: 
+- add new event,
+- edit,
+- delete,
+- add event other user by ID event,
+- show ID of this event,
+- turn on screen saver mode
+
+<br>
+<br>
+<br>
 
 I use express with Prisma and it was good choice for backend. 
 
