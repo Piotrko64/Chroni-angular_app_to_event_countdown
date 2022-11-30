@@ -21,24 +21,10 @@ export class AppComponent implements OnInit {
   modalInfo: Modal = { open: true, title: '', description: '' };
 
   ngOnInit() {
-    alert(document.cookie + 'asinit');
-
     this.modal.modalInfo.subscribe((info: Modal) => {
       this.modalInfo = info;
     });
 
-    new Notification('a');
-
-    Notification.requestPermission().then((perm) => {
-      if (perm === 'granted') {
-        console.log('granted');
-        new Notification(perm, { body: 'aaa' });
-      }
-    });
-
-    if (findSessionIdCookie()) {
-      alert(document.cookie + 'yes');
-      this.loginUser.autoLogin();
-    }
+    this.loginUser.autoLogin();
   }
 }

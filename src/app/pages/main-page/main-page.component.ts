@@ -59,5 +59,12 @@ export class MainPageComponent implements OnInit {
         );
       }
     });
+
+    Notification.requestPermission().then((perm) => {
+      if (perm === 'granted') {
+        console.log('granted');
+        new Notification(perm, { body: 'aaa' });
+      }
+    });
   }
 }
