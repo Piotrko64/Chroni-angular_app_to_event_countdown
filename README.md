@@ -67,5 +67,7 @@ I use express with Prisma and it was good choice for backend.
 
 <p align="center"> <img height="400" src="https://user-images.githubusercontent.com/77500425/204870140-f37d18a2-72ff-46a6-86af-e0b54240f823.png"/><p>
 
+### I use free hosting for backend and database.
+So if you for example update event you can sometimes meet problem. Chroni is non commercial project
 
 
