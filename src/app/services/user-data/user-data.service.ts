@@ -229,6 +229,9 @@ export class UserDataService {
   }
 
   autoLogin() {
+    if (!findSessionIdCookie()) {
+      return;
+    }
     this.router.navigate(['autoLogin']);
 
     this.isLoading.next(true);

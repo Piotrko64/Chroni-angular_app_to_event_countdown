@@ -5,7 +5,6 @@ import { modalsAnimation } from './data/animations/modalsAnimation';
 import { findSessionIdCookie } from './utils/cookies/findSessionIdCookie';
 import { UserDataService } from './services/user-data/user-data.service';
 import { Modal } from './@types/Modal';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -16,8 +15,7 @@ import { Router } from '@angular/router';
 export class AppComponent implements OnInit {
   constructor(
     private modal: ModalManageService,
-    private loginUser: UserDataService,
-    private router: Router
+    private loginUser: UserDataService
   ) {}
 
   modalInfo: Modal = { open: true, title: '', description: '' };
@@ -26,6 +24,7 @@ export class AppComponent implements OnInit {
     this.modal.modalInfo.subscribe((info: Modal) => {
       this.modalInfo = info;
     });
-    this.router.navigate(['autoLogin']);
+
+    this.loginUser.autoLogin();
   }
 }
