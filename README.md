@@ -7,20 +7,21 @@
 
 <br />
 
-<p align="center">This is sample documentation using README. Here you can put a short general text about our application.
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a justo eget elit aliquam aliquet. Nullam dictum mauris libero, in finibus leo suscipit at. </p>
+<p align="center">Application to countdown your event or your friends thanks to system to share by ID event. My the most favourite feature is screen saver mode (last button on main page) </p>
 
 <br />
 
 <div align="center">
 
-<img src="https://user-images.githubusercontent.com/77500425/161312332-1842468e-46e2-4dc6-8996-4b4cc28bc4fd.png" alt="html5" height="50"  align="center" title="HTML" />
-<img src="https://user-images.githubusercontent.com/77500425/161312398-ceb134e4-5c2f-41c6-b58c-ccb7329528ba.png" alt="css3" height="50"  align="center" title="CSS"/>
-<img src="https://user-images.githubusercontent.com/77500425/161312230-36d37ac5-8801-4313-a68c-c5695c429b70.png" alt="javascript" height="50" align="center" title="JS"/>
+<img src="https://user-images.githubusercontent.com/77500425/204867272-17860be0-4cab-4283-9519-d2849d89ebac.png" alt="Angular" height="50"  align="center" title="Angular"/>
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/sass/sass-original.svg" alt="sass"  height="35" align="center"/>
+
 <img src="https://user-images.githubusercontent.com/77500425/161311954-e03613e7-54b2-4d1b-ac2e-559f8c1e9f2d.png" alt="typescript" height="50"  align="center" title="TS"/>
-<img src="https://user-images.githubusercontent.com/77500425/161312615-f3961568-28bb-48fa-9d95-93ecd61337b3.png" alt="react"  height="50" align="center"/>
-<img src="https://user-images.githubusercontent.com/77500425/161314348-bd1a1db1-cf7d-4a7d-a870-25f357a2a03d.png" alt="Next.js" height="50"  align="center" title="NextJS"/>
-<img src="https://user-images.githubusercontent.com/77500425/161313295-a11c936d-a0b3-4bb6-84c1-9ea3c459c3b8.png" alt="Mongo"  height="50" align="center"/>
+<img src="https://user-images.githubusercontent.com/77500425/204864719-c2ed036c-184d-4c22-b031-6aafd9361241.png" alt="Prisma" height="50"  align="center" title="Prisma"/>
+<img src="https://user-images.githubusercontent.com/77500425/204864874-c9c0b991-8b77-4bed-afe4-0327e9802094.png" alt="Supabase" height="50"  align="center" title="Supabase"/>
+<img src="https://user-images.githubusercontent.com/77500425/204865417-73772b7c-a17d-4a85-85ea-462bd723f13f.png" alt="Express" height="50"  align="center" title="ExpressJS"/>
+
+
 <img src="https://user-images.githubusercontent.com/77500425/161312763-dd21dc88-2b1a-4a66-896b-8ce02e0c6a8c.png" alt="Node"  height="50" align="center"/>
 
 </div>
@@ -34,63 +35,35 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a justo eget elit a
 
 * [Inspiration](#inspiration)
 
-* [Major Updates](#Updates)
 
-* [What have I learned from this project](#what-have-i-learned-from-this-project)
 
 <br />
 
 # Instalation
 - Download files by **git clone _repository-name_**
-- Use **npm i**
-- Use **npm start**
+- Use **yarn**
+- Use **ng serve**
+- You can also run backend for this app [Click to see backend](https://github.com/Piotrko64/node_auth-exercise)
 
 
+### In final version of this project backend version use Supabase with postgresql instead SQLite
+In production standalone database is better than SQLite 
 
-### You need to complete the **.env** file with the following variables:
-- **MONGODB**: "your_connection_string"
-- **API_KEY**: "paths_to_API"
 
 <br />
 
 # About 
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a justo eget elit aliquam aliquet. Nullam dictum mauris libero, in finibus leo suscipit at. Etiam bibendum ex ac imperdiet accumsan. In at neque vitae odio vehicula pulvinar sed nec velit. Donec pulvinar semper libero non cursus. Vivamus imperdiet lorem enim, a euismod mauris facilisis eu. Nulla sapien ante, laoreet eget diam id, dapibus pharetra nibh. Quisque bibendum justo elit, sed sagittis nisl mattis quis.
-
-<br />
-
-<p align="center"> <img src="https://user-images.githubusercontent.com/77500425/164990774-eb31b66c-6166-46f5-ada9-3c0875dce883.png"/><p>
-
-<br />
-
-In this section you can writing about project. For example about its destiny or how it works. You can also put screenshots like I am now.
-
-<br />
-
-# Inspiration
-
-My inspiration to create this project was [this README](https://github.com/Piotrko64/react-sound-architecture/edit/master/README.md)
-
-<br />
-
-# Updates
-
-### **v1.0.3** 05/05/2022
-
-> -   **Super function** is ready!'
+I would like learn Angular and create interesting app with login system. Chroni is a website where you can add, share and check your events. App have also other feature (besides CRUD operations) for example - Screen saver mode - I love this! Look a t the picture below.
+<p align="center"> <img height="400" src="https://user-images.githubusercontent.com/77500425/204868292-025e10aa-6e32-4ce2-9e0e-6aa7c1498eee.jpg"/><p>
 
 
-### **v1.0.1** 04/04/2022
+However basic appearance look very simple and minimalistic. The most space is taken up by a digital clock created with SVG technology.
 
-> -   Add *Formik* liblary
-> -   Writing example updates
+<p align="center"> <img height="400" src="https://user-images.githubusercontent.com/77500425/204869815-631514e5-9409-4a64-9d9b-7f4321b9d439.png"/><p>
 
-<br />
 
-# What have I learned from this project
-
-> - How to create interesting README files
-> - Present projects well
+I use express with Prisma and it was good choice for backend. 
 
 
 
