@@ -1,9 +1,16 @@
+import { calculateDifferentDates } from 'src/app/utils/calculateDifferentDates';
 import { AllEvents } from '../../@types/DataEvents';
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ViewChild,
+  ElementRef,
+  OnChanges,
+} from '@angular/core';
 import { EventUser } from 'src/app/@types/DataEvents';
 import { UserDataService } from 'src/app/services/user-data/user-data.service';
 import { Router } from '@angular/router';
-import { fromEvent } from 'rxjs';
+import { fromEvent, interval } from 'rxjs';
 import { findWallpaper } from 'src/app/data/wallpapers/wallpapersData';
 
 @Component({
@@ -36,8 +43,36 @@ export class MainPageComponent implements OnInit {
     return `url('/assets/wallpapers/${findWallpaper()}.jpg')`;
   }
 
+  private showClockOnTitle() {
+    if (!this.choosenEvent?.dataEvent) {
+      document.title = 'Chroni';
+      return;
+    }
+    const eventDate = calculateDifferentDates(this.choosenEvent!.dataEvent);
+
+    const { days, minutes, hours, seconds } = eventDate;
+
+    function concatZero(num: number) {
+      return (num < 10 ? '0' : '') + num;
+    }
+
+    document.title =
+      concatZero(days) +
+      ':' +
+      concatZero(hours) +
+      ':' +
+      concatZero(minutes) +
+      ':' +
+      concatZero(seconds);
+
+    if (eventDate.end) {
+      document.title = `${this.choosenEvent?.title} is end`;
+    }
+  }
+
   ngOnInit(): void {
     const press = fromEvent<Event>(document, 'fullscreenchange');
+
     press.subscribe(() => {
       if (window.innerHeight !== screen.height) {
         this.isScreenSaverMode = false;
@@ -58,6 +93,10 @@ export class MainPageComponent implements OnInit {
           (event) => event.eventId === id
         );
       }
+    });
+
+    interval(1000).subscribe(() => {
+      this.showClockOnTitle();
     });
 
     Notification.requestPermission().then((perm) => {

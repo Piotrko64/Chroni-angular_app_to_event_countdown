@@ -1,3 +1,4 @@
+import { UserDataService } from './../../../services/user-data/user-data.service';
 import { calculateDifferentDates } from 'src/app/utils/calculateDifferentDates';
 import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { interval } from 'rxjs';
@@ -11,6 +12,7 @@ import { typesNumbers } from 'src/app/data/digitalClock/typesNumbers';
   encapsulation: ViewEncapsulation.ShadowDom,
 })
 export class WholeSetInfoComponent implements OnInit {
+  constructor(private userData: UserDataService) {}
   @Input() eventDate = '';
   @Input() title = '';
   @Input() description = '';
@@ -18,6 +20,7 @@ export class WholeSetInfoComponent implements OnInit {
   @Input() isScreenSaverMode = false;
 
   typesOfNumbers = typesNumbers;
+  choosenEventDate = '';
 
   objectCountdown: ObjectCountdown = {
     end: false,
