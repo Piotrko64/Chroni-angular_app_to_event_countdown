@@ -37,7 +37,7 @@ button {
   border: none;
   transition: all 0.1s ease-in-out;
   &:disabled {
-    font-size: 4rem;
+    background-color: rgb(148, 148, 148);
   }
 }
 .maxWidth {
@@ -61,10 +61,6 @@ button {
     border-radius: 4px;
 
     font-size: 0.95rem;
-
-    &:disabled {
-      font-size: 3.8rem;
-    }
   }
 }
 
@@ -84,10 +80,6 @@ button {
     padding: 6px 4px;
 
     font-size: 0.9rem;
-
-    &:disabled {
-      font-size: 3.6rem;
-    }
   }
 }
 @media (max-width: 540px) {

@@ -18,6 +18,7 @@ export class ModifyCreateEventComponent {
   titleForm = 'Add new event';
   buttonTitle = 'Add';
   eventId: null | string = null;
+  isLoading = false;
 
   eventForm = new FormGroup({
     titleEvent: new FormControl('', [
@@ -38,12 +39,14 @@ export class ModifyCreateEventComponent {
   };
 
   ngOnInit() {
-    new Notification('aa', { body: 'aaa' });
-
     this.route.queryParams.subscribe((eventId) => {
       this.eventId = eventId['eventId'];
       this.titleForm = this.eventId ? 'Modify event' : 'Add new event';
       this.buttonTitle = this.titleForm === 'Add new event' ? 'Add' : 'Update';
+    });
+
+    this.dataUser.isLoading.subscribe((loading) => {
+      this.isLoading = loading;
     });
 
     if (this.eventId) {

@@ -133,6 +133,7 @@ export class UserDataService {
   }
 
   addEvent(body: AddingEvent) {
+    this.isLoading.next(true);
     this.http
       .post<{ addNewEvent: EventUser }>(
         `${environment.backendUrl}/api/addEvent`,
@@ -144,6 +145,7 @@ export class UserDataService {
       )
       .subscribe({
         next: (data) => {
+          this.isLoading.next(false);
           this.eventsUser.next(
             this.eventsUser.getValue().concat([data.addNewEvent])
           );
@@ -154,7 +156,7 @@ export class UserDataService {
           this.router.navigate(['home']);
         },
         error: (err) => {
-          console.log(err);
+          this.isLoading.next(false);
           this.modal.openModal({
             title: 'Something went wrong...',
             description: err.error.err,
@@ -164,6 +166,7 @@ export class UserDataService {
   }
 
   updateEvent(body: UpdateEvent) {
+    this.isLoading.next(true);
     this.http
       .put<ResponseEvent>(
         `${environment.backendUrl}/api/updateEvent`,
@@ -175,6 +178,7 @@ export class UserDataService {
       )
       .subscribe({
         next: (data) => {
+          this.isLoading.next(false);
           this.modal.openModal({
             title: 'Everything is ok!',
             description: data.message,
@@ -190,6 +194,7 @@ export class UserDataService {
           this.router.navigate(['home']);
         },
         error: (err) => {
+          this.isLoading.next(false);
           this.modal.openModal({
             title: 'Something went wrong...',
             description: err.error.err,
