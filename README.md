@@ -43,7 +43,7 @@
 - Download files by **git clone _repository-name_**
 - Use **yarn**
 - Use **ng serve**
-- You can also run backend for this app [Click to see backend](https://github.com/Piotrko64/node_auth-exercise)
+- You can also run backend for this app [Click to see example backend for Chroni with SQLite](https://github.com/Piotrko64/node_auth-exercise)
 
 
 ### In final version of this project backend version use Supabase with postgresql instead SQLite
