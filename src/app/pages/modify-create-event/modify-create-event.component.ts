@@ -38,7 +38,8 @@ export class ModifyCreateEventComponent {
   };
 
   ngOnInit() {
-    alert(document.cookie);
+    new Notification('aa', { body: 'aaa' });
+
     this.route.queryParams.subscribe((eventId) => {
       this.eventId = eventId['eventId'];
       this.titleForm = this.eventId ? 'Modify event' : 'Add new event';
