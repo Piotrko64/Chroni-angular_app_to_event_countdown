@@ -33,7 +33,7 @@
 
 * [About project](#about)
 
-* [Inspiration](#inspiration)
+
 
 
 
@@ -65,6 +65,7 @@ However basic appearance look very simple and minimalistic. The most space is ta
 
 I use express with Prisma and it was good choice for backend. 
 
+<p align="center"> <img height="400" src="https://user-images.githubusercontent.com/77500425/204870140-f37d18a2-72ff-46a6-86af-e0b54240f823.png"/><p>
 
 
 
