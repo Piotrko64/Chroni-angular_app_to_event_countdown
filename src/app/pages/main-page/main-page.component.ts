@@ -66,7 +66,7 @@ export class MainPageComponent implements OnInit {
       concatZero(seconds);
 
     if (eventDate.end) {
-      document.title = `${this.choosenEvent?.title} is end`;
+      document.title = `🚨 ${this.choosenEvent?.title} is end`;
     }
   }
 

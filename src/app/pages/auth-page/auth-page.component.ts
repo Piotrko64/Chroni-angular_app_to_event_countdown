@@ -16,8 +16,6 @@ export class AuthPageComponent implements OnInit {
   displayMessage = true;
 
   ngOnInit() {
-    alert(document.cookie + 'as');
-
     this.cookie.isCookieWasSeen.subscribe((boolean) => {
       this.displayMessage = !boolean;
     });
