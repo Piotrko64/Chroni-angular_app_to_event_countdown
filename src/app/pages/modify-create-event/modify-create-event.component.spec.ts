@@ -25,8 +25,10 @@ describe('ModifyCreateEventComponent', () => {
 
   it('should find text - "Add new event"', () => {
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain(
-      'Add new event'
-    );
+
+    component.titleForm = 'Add new event';
+    fixture.detectChanges();
+    console.log(compiled);
+    expect(compiled.querySelector('h1')?.innerText).toContain('Add new event');
   });
 });
