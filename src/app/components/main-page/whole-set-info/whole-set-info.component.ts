@@ -12,7 +12,6 @@ import { typesNumbers } from 'src/app/data/digitalClock/typesNumbers';
   encapsulation: ViewEncapsulation.ShadowDom,
 })
 export class WholeSetInfoComponent implements OnInit {
-  constructor(private userData: UserDataService) {}
   @Input() eventDate = '';
   @Input() title = '';
   @Input() description = '';

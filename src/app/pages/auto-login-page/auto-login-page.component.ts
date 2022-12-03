@@ -1,3 +1,4 @@
+import { clearCookies } from 'src/app/utils/cookies/clearCookies';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -10,6 +11,7 @@ export class AutoLoginPageComponent {
   constructor(private router: Router) {}
 
   backToLoginPage = () => {
+    clearCookies();
     this.router.navigate([''], { replaceUrl: true });
   };
 }
