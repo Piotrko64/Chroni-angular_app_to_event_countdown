@@ -25,11 +25,13 @@ describe('WholeSetInfoComponent', () => {
   });
 
   it('h1 should contain word: chroni', () => {
+    const compiled = fixture.nativeElement as HTMLElement;
+
     component.title = 'chroni';
     fixture.detectChanges();
 
-    const h1 = fixture.nativeElement.querySelector('');
-    console.log(h1);
-    expect(h1.textContent).toContain('chroni');
+    const h1 = compiled.querySelector('h1');
+    console.log(compiled, '999999999');
+    expect(h1?.innerText).toContain('chroni');
   });
 });

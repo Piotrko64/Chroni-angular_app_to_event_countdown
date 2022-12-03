@@ -9,7 +9,6 @@ import { typesNumbers } from 'src/app/data/digitalClock/typesNumbers';
   selector: 'app-whole-set-info',
   templateUrl: './whole-set-info.component.html',
   styleUrls: ['./whole-set-info.component.scss'],
-  encapsulation: ViewEncapsulation.ShadowDom,
 })
 export class WholeSetInfoComponent implements OnInit {
   @Input() eventDate = '';
