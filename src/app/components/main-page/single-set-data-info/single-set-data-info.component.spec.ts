@@ -8,9 +8,8 @@ describe('SingleSetDataInfoComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SingleSetDataInfoComponent ]
-    })
-    .compileComponents();
+      declarations: [SingleSetDataInfoComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -21,5 +20,11 @@ describe('SingleSetDataInfoComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should return false', () => {
+    const booleanInput = component.versionList;
+
+    expect(booleanInput).toBeFalse();
   });
 });

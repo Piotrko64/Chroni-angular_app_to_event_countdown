@@ -31,7 +31,7 @@ describe('WholeSetInfoComponent', () => {
     fixture.detectChanges();
 
     const h1 = compiled.querySelector('h1');
-    console.log(compiled, '999999999');
+
     expect(h1?.innerText).toContain('chroni');
   });
 });

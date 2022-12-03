@@ -35,7 +35,6 @@ describe('check sorting events', () => {
   });
 
   it('second event should have userId equal 3', () => {
-    const sortingList = sortingEventsByDates(dummyList);
-    expect(+sortingList[0].userId!).toEqual(3);
+    expect(+sortingList[1].userId!).toEqual(3);
   });
 });
